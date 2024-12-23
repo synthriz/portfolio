@@ -22,21 +22,29 @@ export default function Projeto({
   children,
   ...restProps
 }: IProjetoProps) {
+  const carouselHeight = "24rem";
+
   return (
     <article
       {...restProps}
       className={twMerge(
-        "flex w-full max-w-4xl mx-auto border-2 border-bea-black", //alterar conforme carrossel
-        "text-bea-black bg-bea-white overflow-hidden",
+        "flex w-full",
+        "overflow-hidden",
+        // "h-96 max-h-96",
+        "border-2 border-bea-black",
+        "text-bea-black",
+        "bg-bea-white",
         className
       )}
+      style={{ height: carouselHeight }}
     >
       {/* imagem */}
       <div className="w-1/2">
         <img
           src={imagem}
           alt={typeof nome === "string" ? nome : "Projeto"}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover text-center bg-opacity-40 bg-gray-400"
+          style={{ lineHeight: carouselHeight }}
         />
       </div>
 

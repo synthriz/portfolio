@@ -6,6 +6,8 @@
   --bea-white: "#e9e9e9";
   --bea-black: "#252525";
   --bea-green: "B9E39E";
+  --arrows-size: 65px;
+  --indicators-size: 80px;
 
   font-family: "Encode Sans", system-ui, Inter, Avenir, Helvetica, Arial,
     sans-serif;
@@ -154,7 +156,105 @@
   content: '#'
 }
 
+.krs {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid #0F0F0F;
+  border-bottom: 2px solid #0F0F0F;
+}
 
+.krs-control {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.krs-control--prev {
+    top: 0px;
+    right: calc(100% - var(--arrows-size));
+    bottom: var(--indicators-size);
+    left: 0px;
+    border-right: 2px solid #0F0F0F;
+}
+
+.krs-control--next {
+    top: 0px;
+    right: 0px;
+    bottom: var(--indicators-size);
+    left: calc(100% - var(--arrows-size));
+    border-left: 2px solid #0F0F0F;
+}
+
+.krs-control-indicators {
+    top: calc(100% - var(--indicators-size));
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border-top: 2px solid #0F0F0F;
+}
+
+
+.krs-btn {
+    width: 1.167em;
+    height: 1.167em;
+    border: 2px solid #0F0F0F;
+    color: #252525;
+    border-radius: 50%;
+    font-size: 36px;
+    font-family: monospace;
+    padding: 0;
+    text-align: center;
+    line-height: 1em;
+    transition: 0.4s ease;
+    cursor: pointer;
+  
+    padding-bottom: 2px;
+}
+
+.krs-btn:hover {
+    background: #CDB4FF;
+    transition: 0.1s ease;
+}
+
+.krs-indicator {
+    font-size: 20px;
+    margin: 6px;
+    width: 1em;
+    height: 1em;
+}
+
+.krs-btn.krs-indicator--active {
+    background: #252525;
+}
+
+
+.krs-body {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: var(--indicators-size);
+    transform: translate3d(0, 0, 0);
+}
+
+.krs-track {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    display: inline-flex;
+    transition: left   .8s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+                margin .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.krs-item {
+    padding: 0 var(--arrows-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

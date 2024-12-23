@@ -5,7 +5,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 
 import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
-import Projeto from "./components/Card-projeto";
+import Carousel from "./components/carousel/Carousel";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <main className="main-app container mx-auto mt-10">
-      <nav className="container mx-auto sticky" style={{ top: 0 }}>
+      <nav className="container mx-auto sticky z-30" style={{ top: 0 }}>
         <ul className="flex overflow-auto">
           {Object.values(EPageSections).map((pageSection, idx) => { 
             return ( //declarando a construçao do <li> para cada pageSection
@@ -147,14 +147,9 @@ PYTHON | SQL   | VS CODE`}
 
       {/* PROJETOS */}
       <PageSection id={EPageSections.PROJETOS} title="projetos">
-        <pre className="my-8 ml-16 p-2 bg-gray-400 bg-opacity-40 inline-block">
-{`TODO: carousel
-
-IMG | Nome do Porjeto
-      lorem ipsum
-      tags[]
-      links[]`}
-        </pre>
+        <div className="mt-10 mb-10 w-full">
+        <Carousel/>
+        </div>
       </PageSection>
 
       {/* CURRICULO */}
@@ -188,9 +183,6 @@ IMG | Nome do Porjeto
           Click on the Vite and React logos to learn more
         </p>
       </PageSection>
-
-      {/* TESTE DO CARD DOS PROJETOS */}
-      <Projeto imagem="a" nome="teste" descricao="loremipsumloremipsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumlorpsumloremipsumoremipsumloremipsumoremioremipsumloremipsumoremipsumloremipsumoremipsumloremipsumoremipsumloremipsumoremipsumloremipsumpsumloremipsumoremipsumloremipsumloremipsumloremipsumloremipsumloremipsum" tecnologias={['React', 'TailwindCSS', 'TypeScript']} githubLink="aaa" deployLink="aa"  />
 
 {/* CONTATO */}
 <PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-white">
