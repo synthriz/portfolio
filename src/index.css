@@ -5,7 +5,7 @@
   --bea-green-rgb: 185, 227, 158;
   --bea-white: "#e9e9e9";
   --bea-black: "#252525";
-  --bea-green: "B9E39E";
+  --bea-green: "#B9E39E";
   --arrows-size: 65px;
   --indicators-size: 80px;
 
@@ -37,6 +37,12 @@
   --tw-text-opacity: 1;
   color: rgba(var(--bea-black-rgb), var(--tw-text-opacity));
 }
+
+.text-bea-green {
+  --tw-text-opacity: 1;
+  color: rgba(var(--bea-green-rgb), var(--tw-text-opacity));
+}
+
 .bg-bea-white {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--bea-white-rgb), var(--tw-bg-opacity));
@@ -71,6 +77,11 @@
 .border-bea-black {
   --tw-border-opacity: 1;
   border-color: rgba(var(--bea-black-rgb), var(--tw-border-opacity));
+}
+
+.border-bea-white {
+  --tw-border-opacity: 1;
+  border-color: rgba(var(--bea-white-rgb), var(--tw-border-opacity));
 }
 
 .square-box {
@@ -128,7 +139,7 @@
 }
 
 .main-app__section {
-  max-height: 70vh;
+  max-height: 80vh;
   min-height: 10rem;
   margin-bottom: 2.5rem;
   border: 2px solid rgb(var(--bea-black-rgb));

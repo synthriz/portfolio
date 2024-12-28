@@ -49,7 +49,7 @@ export default function Projeto({
       </div>
 
       {/* descriçao */}
-      <div className="p-6 w-1/2 overflow-hidden">
+      <div className="p-10 w-1/2 overflow-hidden">
         {nome && <h2 className="text-2xl font-bold mb-2">{nome}</h2>}
         <p className="text-gray-600 mb-4 break-words overflow-auto no-scrollbar">{descricao}</p>
 
@@ -72,7 +72,7 @@ export default function Projeto({
         <div className="flex space-x-4">
           <a
             href={githubLink}
-            className="px-4 py-2 bg-white border-2 border-bea-black text-bea-black font-bold hover:bg-gray-700 transition duration-300"
+            className="px-4 py-2 bg-white border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
           >
             GITHUB
           </a>

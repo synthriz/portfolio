@@ -1,11 +1,12 @@
 import { useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { FiArrowRightCircle } from "react-icons/fi";
+import { FiArrowRightCircle, FiDownload, FiFile, FiFileMinus } from "react-icons/fi";
 
 import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
 import Carousel from "./components/carousel/Carousel";
+import { Form } from "./components/Form";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -82,8 +83,8 @@ export default function App() {
         className="flex flex-col"
         title="sobre mim"
       >
-        <div className="flex items-stretch flex-auto overflow-hidden" style={{ height: 500}}>
-          <div className="w-1/2 border-r-2 border-bea-black p-4 overflow-auto no-scrollbar">
+        <div className="flex items-stretch flex-auto overflow-hidden" style={{ height: 520}}>
+          <div className="w-1/2 border-r-2 border-bea-black p-8 overflow-auto no-scrollbar">
             <p className="mb-2 text-xl">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
               blanditiis reprehenderit aut similique vitae nobis et corrupti
@@ -153,14 +154,38 @@ PYTHON | SQL   | VS CODE`}
       </PageSection>
 
       {/* CURRICULO */}
-      <PageSection id={EPageSections.CURRICULO} title="curriculo">
-        <pre className="my-8 ml-16 p-2 bg-gray-400 bg-opacity-40 inline-block">
-{`icone | lorem ipsum
-        download`}
-        </pre>
+      <PageSection id={EPageSections.CURRICULO}
+      className="flex flex-col"
+      title="currículo"
+      >
+        <div className="flex items-start flex-auto overflow-hidden" style={{ height: 350}}>
+          <div className="flex items-center justify-center bg-bea-green w-1/2 h-full border-r-2 border-bea-black">
+            <FiFileMinus style={{ fontSize: "10em", marginTop: "1px", strokeWidth: "1px" }}/>
+          </div>
+          <div className="flex flex-col justify-between h-full">
+            <p className="py-20 px-10 mb-2 text-xl">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
+              blanditiis reprehenderit aut similique vitae nobis et corrupti
+              nemo optio! Aperiam neque deserunt voluptatum error architecto
+              totam, a accusantium impedit voluptate.
+              </p>
+              <a
+                style={{ minWidth: "50px" }}
+                href=""
+                className="leading-none uppercase text-xl p-1 h-16 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-full"
+              >
+                <span>DOWNLOAD</span>
+                &nbsp;
+                <FiDownload style={{ fontSize: "1.2em", marginTop: "1px" }} />
+              </a>
+          </div>
+          <div>
+
+          </div>
+        </div>
       </PageSection>
 
-      {/* teste kjjkkjk */}
+      {/* teste kjjkkjk
       <PageSection id={"teste" as any} title="bagulhetes do react">
         <div>
           <a href="https://vitejs.dev" target="_blank">
@@ -182,23 +207,18 @@ PYTHON | SQL   | VS CODE`}
         <p className="read-the-docs">
           Click on the Vite and React logos to learn more
         </p>
-      </PageSection>
+      </PageSection> */}
 
 {/* CONTATO */}
-<PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-white">
-  <pre className="my-8 ml-16 p-2 bg-gray-400 bg-opacity-40 inline-block">
-{`
-              | nome
-              | [         ]
-              | assunto
-#contato,     | [         ]
-me mande uma  | mensagem
-mensagem      | [         ]
-              | [         ]
-              | [         ]
-              |   ENVIAR
-`}
-  </pre>
+<PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col p-28">
+  <div className="flex items-center flex-auto overflow-hidden">
+    <div className="flex items-center justify-center w-2/5 px-28">
+      <h2 className="text-4xl font-bold text-bea-green">#contato, me mande uma mensagem!</h2>
+    </div>
+    <div className="flex items-center justify-center w-3/5 px-40">
+      <Form/>
+    </div>
+  </div>
 </PageSection>
     </main>
   );
