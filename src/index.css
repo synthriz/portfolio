@@ -25,7 +25,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  box-sizing: border-box;
+
+  :is(a, button, input, textarea, summary):focus{
+    outline-color: currentColor;
+    outline-style: solid;
+    outline-width: 5px;
+    outline-offset: 0px;
+  }
 }
+
 
 /* custom vars */
 
@@ -141,7 +151,7 @@
 .main-app__section {
   max-height: 80vh;
   min-height: 10rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
   border: 2px solid rgb(var(--bea-black-rgb));
   border-right-width: 0;
   border-left-width: 0;
@@ -267,7 +277,11 @@
     justify-content: center;
 }
 
-
+.flex-custom {
+  flex: 1 1 450px;
+  display: flex; 
+  flex-direction: row;
+}
 
 
 

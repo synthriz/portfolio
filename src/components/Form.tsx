@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 
 export function Form() {

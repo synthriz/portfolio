@@ -7,6 +7,8 @@ import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
 import Carousel from "./components/carousel/Carousel";
 import { Form } from "./components/Form";
+import Skills from "./components/Skills";
+import { skills } from "./components/ConstSkills";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -83,8 +85,8 @@ export default function App() {
         className="flex flex-col"
         title="sobre mim"
       >
-        <div className="flex items-stretch flex-auto overflow-hidden" style={{ height: 520}}>
-          <div className="w-1/2 border-r-2 border-bea-black p-8 overflow-auto no-scrollbar">
+        <div className="flex-inline md:flex items-center md:items-stretch flex-auto overflow-y-scroll md:overflow-hidden" style={{ height: 520}}>
+          <div className="w-full md:w-1/2 border-r-0 md:border-r-2 border-bea-black p-8 overflow-auto no-scrollbar">
             <p className="mb-2 text-xl">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
               blanditiis reprehenderit aut similique vitae nobis et corrupti
@@ -116,7 +118,7 @@ export default function App() {
               totam, a accusantium impedit voluptate.
             </p>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             {/* <img
               src="https://avatars.githubusercontent.com/u/111395659?v=4"
               alt="profile picture"
@@ -124,26 +126,22 @@ export default function App() {
             /> */}
             <img
               src="https://avatars.githubusercontent.com/u/111395659?v=4"
-              alt="profile picture"
+              alt="Profile picture"
               className="flex-auto flex items-center justify-center w-full h-full object-cover bg-gray-400 bg-opacity-20"
             />
           </div>
         </div>
-        <div className="flex w-full">
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-1 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">GITHUB</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-1 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">BEHANCE</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-1 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">LINKEDIN</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-1 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">PINTEREST</a>
+        <div className="flex flex-col md:flex-row w-full h-40 md:h-auto justify-end">
+        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">GITHUB</a>
+        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">BEHANCE</a>
+        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">LINKEDIN</a>
+        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">PINTEREST</a>
         </div>
       </PageSection>
       
       {/* SKILLS */}
       <PageSection id={EPageSections.SKILLS} title="skills">
-        <pre className="my-8 ml-16 p-2 bg-gray-400 bg-opacity-40 inline-block">
-{`HTML5  | CSS3  | JS
-TS     | REACT | REACT NATIVE
-PYTHON | SQL   | VS CODE`}
-        </pre>
+        <Skills skills={skills}/>
       </PageSection>
 
       {/* PROJETOS */}
@@ -178,9 +176,6 @@ PYTHON | SQL   | VS CODE`}
                 &nbsp;
                 <FiDownload style={{ fontSize: "1.2em", marginTop: "1px" }} />
               </a>
-          </div>
-          <div>
-
           </div>
         </div>
       </PageSection>
