@@ -31,7 +31,7 @@
   :is(a, button, input, textarea, summary):focus{
     outline-color: currentColor;
     outline-style: solid;
-    outline-width: 5px;
+    outline-width: 2px;
     outline-offset: 0px;
   }
 }
@@ -171,7 +171,7 @@
   padding-right: 2.25rem;
   font-weight: bold;
   line-height: 4.5rem;
-  border-bottom: 2px solid rgb(var(--bea-black-rgb));
+  /* border-bottom: 2px solid rgb(var(--bea-black-rgb)); */
 }
 .main-app__section-title::before {
   content: '#'

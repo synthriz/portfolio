@@ -6,9 +6,10 @@ import { FiArrowRightCircle, FiDownload, FiFile, FiFileMinus } from "react-icons
 import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
 import Carousel from "./components/carousel/Carousel";
-import { Form } from "./components/Form";
-import Skills from "./components/Skills";
-import { skills } from "./components/ConstSkills";
+import { Form } from "./components/contact/Form";
+import Skills from "./components/skills/Skills";
+import { skills } from "./util/SkillsData";
+import AboutMe from "./components/AboutMe";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -58,7 +59,7 @@ export default function App() {
       {/* HOME */}
       <PageSection
         id={EPageSections.HOME} 
-        className="h-screen"
+        className="h-screen border-t-0"
       >
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
           <h1 className="bea-headline__title font-bold text-8xl">
@@ -85,62 +86,18 @@ export default function App() {
         className="flex flex-col"
         title="sobre mim"
       >
-        <div className="flex-inline md:flex items-center md:items-stretch flex-auto overflow-y-scroll md:overflow-hidden" style={{ height: 520}}>
-          <div className="w-full md:w-1/2 border-r-0 md:border-r-2 border-bea-black p-8 overflow-auto no-scrollbar">
-            <p className="mb-2 text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
-              blanditiis reprehenderit aut similique vitae nobis et corrupti
-              nemo optio! Aperiam neque deserunt voluptatum error architecto
-              totam, a accusantium impedit voluptate.
-            </p>
-            <p className="mb-2 text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
-              blanditiis reprehenderit aut similique vitae nobis et corrupti
-              nemo optio! Aperiam neque deserunt voluptatum error architecto
-              totam, a accusantium impedit voluptate.
-            </p>
-            <p className="mb-2 text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
-              blanditiis reprehenderit aut similique vitae nobis et corrupti
-              nemo optio! Aperiam neque deserunt voluptatum error architecto
-              totam, a accusantium impedit voluptate.
-            </p>
-            <p className="mb-2 text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
-              blanditiis reprehenderit aut similique vitae nobis et corrupti
-              nemo optio! Aperiam neque deserunt voluptatum error architecto
-              totam, a accusantium impedit voluptate.
-            </p>
-            <p className="mb-2 text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
-              blanditiis reprehenderit aut similique vitae nobis et corrupti
-              nemo optio! Aperiam neque deserunt voluptatum error architecto
-              totam, a accusantium impedit voluptate.
-            </p>
-          </div>
-          <div className="w-full md:w-1/2">
-            {/* <img
-              src="https://avatars.githubusercontent.com/u/111395659?v=4"
-              alt="profile picture"
-              className="square-content bg-gray-400 bg-opacity-20"
-            /> */}
-            <img
-              src="https://avatars.githubusercontent.com/u/111395659?v=4"
-              alt="Profile picture"
-              className="flex-auto flex items-center justify-center w-full h-full object-cover bg-gray-400 bg-opacity-20"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row w-full h-40 md:h-auto justify-end">
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">GITHUB</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">BEHANCE</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-r-0 md:border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">LINKEDIN</a>
-        <a href="" className="leading-none uppercase text-xl p-1 h-16 flex-auto md:flex-1 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300">PINTEREST</a>
-        </div>
+        <AboutMe/>
       </PageSection>
       
       {/* SKILLS */}
-      <PageSection id={EPageSections.SKILLS} title="skills">
+      <PageSection id={EPageSections.SKILLS} title="skills" secondaryContent={
+        <div className="flex flex-row content-between justify-self-end gap-6 justify-center items-center pr-12">
+          <a href="" className="uppercase text-xl font-bold text-bea-black">all</a>
+          <a href="" className="uppercase text-xl font-bold text-bea-black">front</a>
+          <a href="" className="uppercase text-xl font-bold text-bea-black">back</a>
+          <a href="" className="uppercase text-xl font-bold text-bea-black">soft</a>
+        </div>
+        }>
         <Skills skills={skills}/>
       </PageSection>
 

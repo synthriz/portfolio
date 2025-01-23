@@ -17,7 +17,7 @@ export default function Skills({
 }: ISkillsProps) {
 
   const ref =
-    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
+    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>; //coisas da lib de arrastar o scroll
   const { events } = useDraggable(ref);
 
   return (
