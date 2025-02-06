@@ -151,7 +151,6 @@
 .main-app__section {
   max-height: 80vh;
   min-height: 10rem;
-  margin-bottom: 5rem;
   border: 2px solid rgb(var(--bea-black-rgb));
   border-right-width: 0;
   border-left-width: 0;
@@ -161,12 +160,17 @@
   border-top: 0;
 }
 
+.main-app__section#sobre,
+.main-app__section#skills,
+.main-app__section#contato {
+  max-height: fit-content;
+}
+
 .bea-headline {
   height: calc(100% - 4rem);
 }
 
 .main-app__section-title {
-  font-size: 2.25rem;
   padding-left: 2.25rem;
   padding-right: 2.25rem;
   font-weight: bold;
@@ -218,8 +222,8 @@
 
 
 .krs-btn {
-    width: 1.167em;
-    height: 1.167em;
+    width: 1.5em;
+    height: 1.5em;
     border: 2px solid #0F0F0F;
     color: #252525;
     border-radius: 50%;
@@ -227,11 +231,9 @@
     font-family: monospace;
     padding: 0;
     text-align: center;
-    line-height: 1em;
+    line-height: 2em;
     transition: 0.4s ease;
     cursor: pointer;
-  
-    padding-bottom: 2px;
 }
 
 .krs-btn:hover {
@@ -278,10 +280,51 @@
 }
 
 .flex-custom {
-  flex: 1 1 450px;
+  flex: 1 1 150px;
   display: flex; 
-  flex-direction: row;
+  flex-direction: column;
 }
+
+.mobile-height {
+  height: fit-content;
+}
+
+body {
+  margin: 16px;
+}
+
+/* p dispositivos grandes lg */
+@media (width >= 64rem) {
+  .mobile-height {
+    height: 520px;
+  }
+
+  .mobile-height.small {
+    height: 350px;
+  }
+
+  .flex-custom {
+    flex: 1 1 450px;
+    display: flex; 
+    flex-direction: row;
+  }
+
+  .krs-btn {
+    width: 1.167em;
+    height: 1.167em;
+    border: 2px solid #0F0F0F;
+    color: #252525;
+    border-radius: 50%;
+    font-size: 36px;
+    font-family: monospace;
+    padding: 0;
+    text-align: center;
+    line-height: 2em;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+}
+
 
 
 

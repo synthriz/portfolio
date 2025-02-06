@@ -59,7 +59,7 @@ export const skills = [
     area: ["front","back", "mobile"],
   },
   {
-    title: "tailwindcss",
+    title: "tailwind css",
     imagem: TWINDSvg,
     area: ["front", "mobile"],
   },

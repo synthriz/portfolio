@@ -16,7 +16,7 @@ export default function PageSection({
   ...restProps
 }: IPageSectionProps) {
   return (
-    <article {...restProps} className={twMerge("main-app__section", className)}>
+    <article {...restProps} className={twMerge("main-app__section text-3xl md:text-4xl mb-9 md:mb-20", className)}>
       <div
         className={`flex space-between ${
           title ? "border-b-2 border-bea-black" : "" //so adiciona borda embaixo se a seçao tiver titulo

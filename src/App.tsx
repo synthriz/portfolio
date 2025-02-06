@@ -25,7 +25,7 @@ export default function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <main className="main-app container mx-auto mt-10">
+    <main className="main-app container mx-auto mt-6 md:mt-10">
       <nav className="container mx-auto sticky z-30" style={{ top: 0 }}>
         <ul className="flex overflow-auto">
           {Object.values(EPageSections).map((pageSection, idx) => { 
@@ -62,7 +62,7 @@ export default function App() {
         className="h-screen border-t-0"
       >
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
-          <h1 className="bea-headline__title font-bold text-8xl">
+          <h1 className="bea-headline__title font-bold text-6xl md:text-9xl">
             Beatriz Tavares
           </h1>
           <p className="bea-headline__subtitle text-xl">
@@ -72,7 +72,7 @@ export default function App() {
         <a
           style={{ minWidth: "320px" }}
           href={`#${EPageSections.CONTATO}`}
-          className="leading-none uppercase text-xl p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-1/2"
+          className="leading-none uppercase text-base md:text-xl p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-1/2"
         >
           <span>Entre em contato</span>
           &nbsp;
@@ -91,7 +91,7 @@ export default function App() {
       
       {/* SKILLS */}
       <PageSection id={EPageSections.SKILLS} title="skills" secondaryContent={
-        <div className="flex flex-row content-between justify-self-end gap-6 justify-center items-center pr-12">
+        <div className="flex flex-row content-between justify-self-end gap-6 justify-center items-center pr-12 overflow-auto">
           <a href="" className="uppercase text-xl font-bold text-bea-black">all</a>
           <a href="" className="uppercase text-xl font-bold text-bea-black">front</a>
           <a href="" className="uppercase text-xl font-bold text-bea-black">back</a>
@@ -113,12 +113,12 @@ export default function App() {
       className="flex flex-col"
       title="currículo"
       >
-        <div className="flex items-start flex-auto overflow-hidden" style={{ height: 350}}>
-          <div className="flex items-center justify-center bg-bea-green w-1/2 h-full border-r-2 border-bea-black">
-            <FiFileMinus style={{ fontSize: "10em", marginTop: "1px", strokeWidth: "1px" }}/>
+        <div className="flex items-start flex-auto overflow-hidden mobile-height small">
+          <div className="hidden lg:flex items-center justify-center bg-bea-green w-1/2 h-full border-r-2 border-bea-black">
+            <FiFileMinus style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }}/>
           </div>
-          <div className="flex flex-col justify-between h-full">
-            <p className="py-20 px-10 mb-2 text-xl">
+          <div className="flex flex-col justify-between h-fit lg:h-full">
+            <p className="py-6 lg:py-20 px-6 lg:px-10 mb-0 lg:mb-2 text-base md:text-xl">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
               blanditiis reprehenderit aut similique vitae nobis et corrupti
               nemo optio! Aperiam neque deserunt voluptatum error architecto
@@ -127,7 +127,7 @@ export default function App() {
               <a
                 style={{ minWidth: "50px" }}
                 href=""
-                className="leading-none uppercase text-xl p-1 h-16 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-full"
+                className="leading-none uppercase text-base md:text-xl p-1 h-16 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-full"
               >
                 <span>DOWNLOAD</span>
                 &nbsp;
@@ -161,17 +161,17 @@ export default function App() {
         </p>
       </PageSection> */}
 
-{/* CONTATO */}
-<PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col p-28">
-  <div className="flex items-center flex-auto overflow-hidden">
-    <div className="flex items-center justify-center w-2/5 px-28">
-      <h2 className="text-4xl font-bold text-bea-green">#contato, me mande uma mensagem!</h2>
-    </div>
-    <div className="flex items-center justify-center w-3/5 px-40">
-      <Form/>
-    </div>
-  </div>
-</PageSection>
+      {/* CONTATO */}
+      <PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col py-12 lg:py:48 px-6 lg:px-48">
+        <div className="flex flex-col lg:flex-row items-center flex-auto p-6 lg:p-0 gap-20 lg:gap-0">
+          <div className="flex items-center justify-center w-full lg:w-2/5 px-0">
+            <h2 className="text-3xl md:text-4xl font-bold text-bea-green">#contato, <br/> me mande uma mensagem!</h2>
+          </div>
+          <div className="flex items-center justify-center w-full lg:w-3/5 pl-0 lg:pl-40">
+            <Form/>
+          </div>
+        </div>
+      </PageSection>
     </main>
   );
 }

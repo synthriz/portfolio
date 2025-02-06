@@ -16,8 +16,8 @@ export function Form() {
   };
     return (
       <>
-        <div className="flex flex-col justify-center w-full">
-          <form onSubmit={handleSubmit} className="space-y-6 text-bea-white">
+        <div className="flex flex-col justify-center w-full h-full">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 text-base md:text-xl text-bea-white">
             <div className="flex flex-col">
               <label htmlFor="nome" className="mb-2">Nome</label>
               <input
@@ -53,7 +53,7 @@ export function Form() {
             <button
               type="submit"
               disabled={isSubmitting} //desabilita o botao enqt IsSubmiting = true
-              className={`leading-none uppercase text-md text-bea-black p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium w-full ${
+              className={`leading-none uppercase text-base md:text-xl text-bea-black p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium w-full ${
                 isSubmitting ? "bg-gray-300 cursor-not-allowed" : "bg-purple-300" //muda as classes e o texto dependendo do estado
               }`}
             >
