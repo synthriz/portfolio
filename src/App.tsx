@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { FiArrowRightCircle, FiDownload, FiFile, FiFileMinus } from "react-icons/fi";
+import { FiArrowRightCircle, FiDownload, FiFileMinus } from "react-icons/fi";
 
 import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
@@ -45,7 +45,8 @@ export default function App() {
                     "transition-colors duration-500",
                     "py-2 px-6 h-20",
                     "text-xl uppercase",
-                    "text-bea-black bg-bea-white hover:text-bea-white hover:bg-bea-black"
+                    "navbar__item__link",
+                    `navbar__item__link--${pageSection}`
                   )}
                 >
                   {pageSection}
@@ -62,7 +63,7 @@ export default function App() {
         className="h-screen border-t-0"
       >
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
-          <h1 className="bea-headline__title font-bold text-6xl md:text-9xl">
+          <h1 className="bea-headline__title font-bold text-6xl md:text-7xl lg:text-9xl">
             Beatriz Tavares
           </h1>
           <p className="bea-headline__subtitle text-xl">
@@ -162,9 +163,9 @@ export default function App() {
       </PageSection> */}
 
       {/* CONTATO */}
-      <PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col py-12 lg:py:48 px-6 lg:px-48">
+      <PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col py-12 md:py-24 lg:py:48 px-6 md:px-12 lg:px-48">
         <div className="flex flex-col lg:flex-row items-center flex-auto p-6 lg:p-0 gap-20 lg:gap-0">
-          <div className="flex items-center justify-center w-full lg:w-2/5 px-0">
+          <div className="flex items-center justify-start lg:justify-center w-full lg:w-2/5 px-0">
             <h2 className="text-3xl md:text-4xl font-bold text-bea-green">#contato, <br/> me mande uma mensagem!</h2>
           </div>
           <div className="flex items-center justify-center w-full lg:w-3/5 pl-0 lg:pl-40">

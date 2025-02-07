@@ -3,9 +3,11 @@
   --bea-white-rgb: 233, 233, 233;
   --bea-black-rgb: 37, 37, 37;
   --bea-green-rgb: 185, 227, 158;
+  --bea-purple-rgb: 196, 181, 253;
   --bea-white: "#e9e9e9";
   --bea-black: "#252525";
   --bea-green: "#B9E39E";
+  --bea-purple: "#c4b5fd";
   --arrows-size: 65px;
   --indicators-size: 80px;
 
@@ -34,6 +36,10 @@
     outline-width: 2px;
     outline-offset: 0px;
   }
+}
+
+body {
+  margin: 16px;
 }
 
 
@@ -133,14 +139,44 @@
   border-right-width: 0;
 }
 
-/* .navbar__item:last-child {
-  border-right-width: 2px;
-} */
-
-
 .navbar__item:first-child {
   border-left-width: 0;
 }
+
+.navbar__item__link {
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  color: rgba(var(--bea-black-rgb), var(--tw-text-opacity));
+  background-color: rgba(var(--bea-white-rgb), var(--tw-bg-opacity));
+}
+
+.navbar__item__link--contato {
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  color: rgba(var(--bea-black-rgb), var(--tw-text-opacity));
+  background-color: rgba(var(--bea-purple-rgb), var(--tw-bg-opacity));
+}
+
+.navbar__item__link--home{
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  color: rgba(var(--bea-white-rgb), var(--tw-text-opacity));
+  background-color: rgba(var(--bea-black-rgb), var(--tw-bg-opacity));
+}
+
+.navbar__item__link:hover {
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  color: rgba(var(--bea-white-rgb), var(--tw-text-opacity));
+  background-color: rgba(var(--bea-black-rgb), var(--tw-bg-opacity));
+}
+
+.navbar__item__link:active {
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  color: rgba(var(--bea-green-rgb), var(--tw-text-opacity));
+}
+
 
 .main-app {
   border: 2px solid rgb(var(--bea-black-rgb));
@@ -160,6 +196,7 @@
   border-top: 0;
 }
 
+/* seçoes que precisam de altura maior no mobile */
 .main-app__section#sobre,
 .main-app__section#skills,
 .main-app__section#contato {
@@ -181,6 +218,7 @@
   content: '#'
 }
 
+/* vars do carrossel */
 .krs {
   position: relative;
   overflow: hidden;
@@ -279,6 +317,7 @@
     justify-content: center;
 }
 
+/* vars responsividade */
 .flex-custom {
   flex: 1 1 150px;
   display: flex; 
@@ -289,8 +328,13 @@
   height: fit-content;
 }
 
-body {
-  margin: 16px;
+/* para dispositivos medios md */
+@media (width >= 48rem) {
+  .flex-custom {
+    flex: 1 1 350px;
+    display: flex; 
+    flex-direction: row;
+  }
 }
 
 /* p dispositivos grandes lg */
@@ -322,7 +366,7 @@ body {
     line-height: 2em;
     transition: 0.4s ease;
     cursor: pointer;
-}
+  }
 }
 
 

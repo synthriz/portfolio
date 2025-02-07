@@ -39,7 +39,7 @@ export default function AboutMe() {
                     totam, a accusantium impedit voluptate.
                 </p>
             </div>
-            <div className="w-full mx-auto">
+            <div className="w-full lg:w-1/2 mx-auto">
                 {/* <img
                 src="https://avatars.githubusercontent.com/u/111395659?v=4"
                 alt="profile picture"

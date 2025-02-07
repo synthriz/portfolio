@@ -30,7 +30,7 @@ export default function Skills({
         {skills.map((skill, index) => (
           <li
           key={index}
-          className="flex-custom items-center gap-0 md:gap-6 list-none py-4 md:py-8 px-4 md:px-12 border-r-2 border-b-2 border-bea-black"
+          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-r-2 border-b-2 border-bea-black"
           >
             <img
               src={skill.imagem}
