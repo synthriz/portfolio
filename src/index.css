@@ -135,8 +135,7 @@ body {
 
 .navbar__item {
   font-weight: 500;
-  border: 2px solid rgb(var(--bea-black-rgb));
-  border-right-width: 0;
+  border-bottom: 2px solid rgb(var(--bea-black-rgb));
 }
 
 .navbar__item:first-child {
@@ -177,6 +176,23 @@ body {
   color: rgba(var(--bea-green-rgb), var(--tw-text-opacity));
 }
 
+#menu {
+  display: none;
+}
+
+/* quando o menu estiver aberto, os botoes aparecem */
+#menu:checked ~ .navbar__buttons {
+  display: flex;
+  opacity: 1;
+}
+
+.navbar__buttons{
+  display: none;
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+/*  */
 
 .main-app {
   border: 2px solid rgb(var(--bea-black-rgb));
@@ -328,12 +344,28 @@ body {
   height: fit-content;
 }
 
+#filter {
+  display: none;
+}
+
 /* para dispositivos medios md */
 @media (width >= 48rem) {
   .flex-custom {
     flex: 1 1 350px;
     display: flex; 
     flex-direction: row;
+  }
+
+  .navbar__item {
+    font-weight: 500;
+    border: 2px solid rgb(var(--bea-black-rgb));
+    border-right-width: 0; 
+  }
+
+  
+  .navbar__buttons {
+    display: flex;
+    opacity: 1;
   }
 }
 
@@ -367,6 +399,7 @@ body {
     transition: 0.4s ease;
     cursor: pointer;
   }
+
 }
 
 

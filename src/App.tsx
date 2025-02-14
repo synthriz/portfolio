@@ -1,7 +1,10 @@
 import { useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import computerou from './assets/computerou.svg'
 import { FiArrowRightCircle, FiDownload, FiFileMinus } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoFilter } from "react-icons/io5";
 
 import { twMerge } from "tailwind-merge";
 import PageSection from "./components/PageSection";
@@ -27,34 +30,72 @@ export default function App() {
   return (
     <main className="main-app container mx-auto mt-6 md:mt-10">
       <nav className="container mx-auto sticky z-30" style={{ top: 0 }}>
-        <ul className="flex overflow-auto">
-          {Object.values(EPageSections).map((pageSection, idx) => { 
-            return ( //declarando a construçao do <li> para cada pageSection
-              <li
-                className={twMerge(
-                  "flex-auto flex-1",
-                  "navbar__item",
-                  `navbar__item--${pageSection}` //classe personalizada p/ items do nav
-                )}
-                key={pageSection} //react thingies
-              >
-                <a
-                  href={`#${pageSection}`} 
+        {/* MENU MOBILE => INPUT E LABEL */}
+        <input type="checkbox" id="menu"/>
+        <div className={twMerge(
+          "flex md:hidden",
+          "justify-center w-full",
+          "border-b-2 border-t-2 border-bea-black"
+          )}
+        >
+          <ul className={twMerge(
+            "flex flex-row",
+            "justify-between content-between",
+            "w-full h-12",
+            "bg-bea-white"
+            )}
+          >
+            <li className={twMerge(
+              "flex flex-auto flex-1",
+              "justify-center items-center max-w-min",
+              "border-r-2 border-bea-black",
+              "bg-bea-black"
+              )}
+            >
+              <a href="#home" className="mx-8 w-6">
+                <img src={computerou}/>
+              </a>
+            </li>
+            <li className={twMerge(
+              "flex flex-auto flex-1",
+              "justify-center items-center max-w-min",
+              "bg-purple-300 border-l-2 border-current"
+              )}
+            >
+              <label htmlFor="menu" className="mx-8">
+                <GiHamburgerMenu style={{ fontSize: "1.5em"}}/> 
+              </label>
+            </li>
+          </ul>
+        </div>
+          <ul className="flex flex-col md:flex-row overflow-auto navbar__buttons">
+            {Object.values(EPageSections).map((pageSection, idx) => { 
+              return ( //declarando a construçao do <li> para cada pageSection
+                <li
                   className={twMerge(
-                    "flex justify-center items-center",
-                    "transition-colors duration-500",
-                    "py-2 px-6 h-20",
-                    "text-xl uppercase",
-                    "navbar__item__link",
-                    `navbar__item__link--${pageSection}`
+                    "flex-auto flex-1",
+                    "navbar__item",
+                    `navbar__item--${pageSection}` //classe personalizada p/ items do nav
                   )}
+                  key={pageSection} //react thingies
                 >
-                  {pageSection}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+                  <a
+                    href={`#${pageSection}`} 
+                    className={twMerge(
+                      "flex justify-center items-center",
+                      "transition-colors duration-500",
+                      "py-2 px-6 h-20",
+                      "text-xl uppercase",
+                      "navbar__item__link",
+                      `navbar__item__link--${pageSection}` //outra classe personalizada p/ itens do nav, ne
+                    )}
+                  >
+                    {pageSection}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
       </nav>
 
       {/* HOME */}
@@ -73,7 +114,14 @@ export default function App() {
         <a
           style={{ minWidth: "320px" }}
           href={`#${EPageSections.CONTATO}`}
-          className="leading-none uppercase text-base md:text-xl p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-1/2"
+          className={twMerge(
+            "flex justify-center items-center",
+            "font-medium text-center",
+            "uppercase text-base md:text-xl",
+            "border-r-2 border-current border-t-2",
+            "leading-none",
+            "p-1 h-16 w-1/2",
+            "bg-purple-300")}
         >
           <span>Entre em contato</span>
           &nbsp;
@@ -92,13 +140,42 @@ export default function App() {
       
       {/* SKILLS */}
       <PageSection id={EPageSections.SKILLS} title="skills" secondaryContent={
-        <div className="flex flex-row content-between justify-self-end gap-6 justify-center items-center pr-12 overflow-auto">
-          <a href="" className="uppercase text-xl font-bold text-bea-black">all</a>
-          <a href="" className="uppercase text-xl font-bold text-bea-black">front</a>
-          <a href="" className="uppercase text-xl font-bold text-bea-black">back</a>
-          <a href="" className="uppercase text-xl font-bold text-bea-black">soft</a>
+        <div className="flex flex-row justify-self-end justify-center">
+          <input type="checkbox" id="filter"/>
+          <div className={twMerge(
+          "flex",
+          "flex-row w-full overflow-auto",
+          )}
+        >
+          <div className="flex lg:hidden justify-center items-center">
+            <label htmlFor="filter" className="mx-8">
+              <IoFilter style={{ fontSize: "1em"}}/> 
+            </label>
+          </div>
+          <ul className={twMerge(
+            "hidden lg:flex", 
+            "flex-row content-between", 
+            "gap-6 justify-center items-center",
+            "pr-12 overflow-auto"
+            )}
+          >
+            <li className="flex justify-center items-center">
+              <a href="" className="bg-bea-white uppercase text-xl font-bold text-bea-black">all</a>
+            </li>
+            <li className="flex justify-center items-center">
+              <a href="" className="bg-bea-white uppercase text-xl font-bold text-bea-black">front</a>
+            </li>
+            <li className="flex justify-center items-center">
+              <a href="" className="bg-bea-white uppercase text-xl font-bold text-bea-black">back</a>
+            </li>
+            <li className="flex justify-center items-center">
+              <a href="" className="bg-bea-white uppercase text-xl font-bold text-bea-black">soft</a>
+            </li>
+          </ul>
+          </div>
         </div>
         }>
+        
         <Skills skills={skills}/>
       </PageSection>
 
@@ -115,7 +192,14 @@ export default function App() {
       title="currículo"
       >
         <div className="flex items-start flex-auto overflow-hidden mobile-height small">
-          <div className="hidden lg:flex items-center justify-center bg-bea-green w-1/2 h-full border-r-2 border-bea-black">
+          <div className={twMerge(
+            "hidden lg:flex",
+            "items-center justify-center", 
+            "border-r-2 border-bea-black",
+            "bg-bea-green",
+            "w-1/2 h-full"
+            )}
+          >
             <FiFileMinus style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }}/>
           </div>
           <div className="flex flex-col justify-between h-fit lg:h-full">
@@ -128,7 +212,14 @@ export default function App() {
               <a
                 style={{ minWidth: "50px" }}
                 href=""
-                className="leading-none uppercase text-base md:text-xl p-1 h-16 border-current border-t-2 text-center flex justify-center items-center font-medium bg-purple-300 w-full"
+                className={twMerge(
+                  "leading-none",
+                  "uppercase font-medium text-base md:text-xl",
+                  "p-1 h-16",
+                  "border-current border-t-2",
+                  "text-center flex justify-center items-center",
+                  "bg-purple-300 w-full"
+                )}
               >
                 <span>DOWNLOAD</span>
                 &nbsp;
@@ -138,33 +229,21 @@ export default function App() {
         </div>
       </PageSection>
 
-      {/* teste kjjkkjk
-      <PageSection id={"teste" as any} title="bagulhetes do react">
-        <div>
-          <a href="https://vitejs.dev" target="_blank">
-            <img src={""} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={""} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </PageSection> */}
-
       {/* CONTATO */}
-      <PageSection id={EPageSections.CONTATO} className="bg-bea-black text-bea-green flex flex-col py-12 md:py-24 lg:py:48 px-6 md:px-12 lg:px-48">
-        <div className="flex flex-col lg:flex-row items-center flex-auto p-6 lg:p-0 gap-20 lg:gap-0">
+      <PageSection id={EPageSections.CONTATO} className={twMerge(
+        "flex flex-col",
+        "bg-bea-black text-bea-green",
+        "py-12 md:py-24 lg:py:48",
+        "px-6 md:px-12 lg:px-48"
+        )}
+      >
+        <div className={twMerge(
+          "flex flex-col lg:flex-row",
+          "items-center flex-auto",
+          "p-6 lg:p-0",
+          "gap-20 lg:gap-0"
+          )}
+        >
           <div className="flex items-center justify-start lg:justify-center w-full lg:w-2/5 px-0">
             <h2 className="text-3xl md:text-4xl font-bold text-bea-green">#contato, <br/> me mande uma mensagem!</h2>
           </div>

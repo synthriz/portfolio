@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect, FC } from "react";
+import { useState, useRef, useCallback, useEffect, FC } from "react";
 import Projeto from "../Card-projeto";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
