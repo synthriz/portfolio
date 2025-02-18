@@ -323,7 +323,7 @@ body {
     position: fixed;
     display: inline-flex;
     transition: left   .8s cubic-bezier(0.18, 0.89, 0.32, 1.28),
-                margin .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    margin .8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .krs-item {
@@ -348,11 +348,51 @@ body {
   display: none;
 }
 
+/* skills grid - a saga */
+
+/* a cada 2 filhos, em telas menores */
+.skills-class li:nth-child(2n) { 
+  border: 2px solid rgb(var(--bea-black-rgb));
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+/* tava dando problema nessa resoluçao especifica favor nao sufocar a artista
+para dispositivos maiores q 580px */
+@media (min-width: 580px) {
+  /* a cada 3 filhos, começando no segundo */
+  .skills-class li:nth-child(3n + 2):not(:nth-child(2n)) { 
+    border: 2px solid rgb(var(--bea-black-rgb));
+    border-top-width: 0;
+  }
+
+  /* removendo a borda para os 2n em telas meio medias because css */
+  .skills-class li:nth-child(2n):not(:nth-child(3n + 2)) {
+    border-left-width: 0;
+  }
+}
+
+/* para dispositivos especificos medio ate gigante, inferno de grid */
+@media (min-width: 48rem) and (max-width: 95.99rem) {
+  /* removendo a borda para os 2n em telas medias because css */
+  .skills-class li:nth-child(3n + 2):not(:nth-child(2n)) {
+    border-right-width: 0;
+    border-left-width: 0;
+  }
+
+  /* a cada 2 filhos, sem afetar 3n+2 */
+  .skills-class li:nth-child(2n):not(:nth-child(3n + 2)) { 
+    border: 2px solid rgb(var(--bea-black-rgb));
+    border-top-width: 0;
+    border-right-width: 0;
+  }
+}
+
 /* para dispositivos medios md */
-@media (width >= 48rem) {
+@media (min-width: 48rem) {
   .flex-custom {
     flex: 1 1 350px;
-    display: flex; 
+    display: flex;
     flex-direction: row;
   }
 
@@ -362,12 +402,12 @@ body {
     border-right-width: 0; 
   }
 
-  
   .navbar__buttons {
     display: flex;
     opacity: 1;
   }
 }
+
 
 /* p dispositivos grandes lg */
 @media (width >= 64rem) {
@@ -402,9 +442,20 @@ body {
 
 }
 
+/* para dispositivos gigantes 2xl */
+@media (min-width: 96rem) {
+  /* a cada 3 filhos, começando no segundo */
+  .skills-class li:nth-child(3n + 2) { 
+    border: 2px solid rgb(var(--bea-black-rgb));
+    border-right-width: 2px;
+    border-top-width: 0;
+  }
 
-
-
+  /* removendo a borda para os 2n em telas 2xl because css */
+  .skills-class li:nth-child(2n):not(:nth-child(3n + 2)) {
+    border-left: none;
+  }
+}
 
 
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import computerou from './assets/computerou.svg'
-import { FiArrowRightCircle, FiDownload, FiFileMinus } from "react-icons/fi";
+import { FiArrowRightCircle, FiDownload, FiFileMinus, FiExternalLink } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoFilter } from "react-icons/io5";
 
@@ -13,6 +13,7 @@ import { Form } from "./components/contact/Form";
 import Skills from "./components/skills/Skills";
 import { skills } from "./util/SkillsData";
 import AboutMe from "./components/AboutMe";
+import Contato from "./components/contact/Contato";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -152,6 +153,8 @@ export default function App() {
               <IoFilter style={{ fontSize: "1em"}}/> 
             </label>
           </div>
+          
+          {/* TO-DO : filtro de skills */}
           <ul className={twMerge(
             "hidden lg:flex", 
             "flex-row content-between", 
@@ -175,7 +178,6 @@ export default function App() {
           </div>
         </div>
         }>
-        
         <Skills skills={skills}/>
       </PageSection>
 
@@ -221,9 +223,9 @@ export default function App() {
                   "bg-purple-300 w-full"
                 )}
               >
-                <span>DOWNLOAD</span>
+                <span>MEU CURRÍCULO</span>
                 &nbsp;
-                <FiDownload style={{ fontSize: "1.2em", marginTop: "1px" }} />
+                <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
               </a>
           </div>
         </div>
@@ -237,20 +239,7 @@ export default function App() {
         "px-6 md:px-12 lg:px-48"
         )}
       >
-        <div className={twMerge(
-          "flex flex-col lg:flex-row",
-          "items-center flex-auto",
-          "p-6 lg:p-0",
-          "gap-20 lg:gap-0"
-          )}
-        >
-          <div className="flex items-center justify-start lg:justify-center w-full lg:w-2/5 px-0">
-            <h2 className="text-3xl md:text-4xl font-bold text-bea-green">#contato, <br/> me mande uma mensagem!</h2>
-          </div>
-          <div className="flex items-center justify-center w-full lg:w-3/5 pl-0 lg:pl-40">
-            <Form/>
-          </div>
-        </div>
+        <Contato/>
       </PageSection>
     </main>
   );

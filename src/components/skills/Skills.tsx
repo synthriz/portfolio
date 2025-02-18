@@ -25,12 +25,12 @@ export default function Skills({
     {...events}
     ref={ref}>
       <ul
-      className="flex flex-wrap gap-0 p-0 justify-center w-full"
+      className="flex flex-wrap gap-0 p-0 justify-center w-full skills-class"
       >
         {skills.map((skill, index) => (
           <li
           key={index}
-          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-r-2 border-b-2 border-bea-black"
+          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black"
           >
             <img
               src={skill.imagem}
