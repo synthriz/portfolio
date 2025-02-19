@@ -214,6 +214,7 @@ body {
 
 /* seçoes que precisam de altura maior no mobile */
 .main-app__section#sobre,
+.main-app__section#projetos,
 .main-app__section#skills,
 .main-app__section#contato {
   max-height: fit-content;
@@ -235,6 +236,10 @@ body {
 }
 
 /* vars do carrossel */
+.krs-height {
+  height: 75vh;
+}
+
 .krs {
   position: relative;
   overflow: hidden;
@@ -405,6 +410,10 @@ para dispositivos maiores q 580px */
   .navbar__buttons {
     display: flex;
     opacity: 1;
+  }
+
+  .krs-height {
+    height: 28rem;
   }
 }
 

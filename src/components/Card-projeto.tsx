@@ -1,5 +1,6 @@
 import { PropsWithChildren, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { FiExternalLink } from "react-icons/fi";
 
 export interface IProjetoProps extends PropsWithChildren {
   imagem: string;
@@ -7,7 +8,7 @@ export interface IProjetoProps extends PropsWithChildren {
   descricao: ReactNode;
   tecnologias: string[];
   githubLink: string;
-  deployLink: string;
+  deployLink?: string;
   className?: string;
 }
 
@@ -22,13 +23,14 @@ export default function Projeto({
   children,
   ...restProps
 }: IProjetoProps) {
-  const carouselHeight = "24rem";
+  const carouselHeight = "28rem";
 
   return (
     <article
       {...restProps}
       className={twMerge(
         "flex flex-col lg:flex-row w-full",
+        "krs-height",
         "overflow-hidden",
         // "h-96 max-h-96",
         "border-0 lg:border-2 border-bea-black",
@@ -36,20 +38,19 @@ export default function Projeto({
         "bg-bea-white",
         className
       )}
-      style={{ height: carouselHeight }}
     >
       {/* imagem */}
       <div className="w-full lg:w-1/2">
         <img
           src={imagem}
           alt={typeof nome === "string" ? nome : "Projeto"}
-          className="w-full h-36 lg:h-full object-cover text-center border-b-2 lg:border-b-0 border-t-2 lg:border-t-0 border-bea-black bg-opacity-40 bg-gray-400"
-          style={{ lineHeight: carouselHeight }}
+          className="w-full h-36 lg:h-full object-cover text-center border-b-2 lg:border-b-0 border-t-2 lg:border-t-0 border-r-0 lg:border-r-2 border-bea-black bg-opacity-40 bg-gray-400"
+          style={{ lineHeight: carouselHeight, filter: "brightness(80%)" }}
         />
       </div>
 
       {/* descriçao */}
-      <div className="p-6 lg:p-10 w-full lg:w-1/2 overflow-hidden">
+      <div className="p-6 lg:p-10 w-full lg:w-1/2 overflow-auto no-scrollbar">
         {nome && <h2 className="text-xl md:text-2xl font-bold mb-2">{nome}</h2>}
         <p className="text-base md:text-xl text-gray-600 mb-4 break-words overflow-auto no-scrollbar">{descricao}</p>
 
@@ -72,15 +73,21 @@ export default function Projeto({
         <div className="flex space-x-4">
           <a
             href={githubLink}
-            className="px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
+            className=" flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
           >
-            GITHUB
+            <span>
+              GITHUB
+            </span>
+            <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
           </a>
           <a
             href={deployLink}
-            className="px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
+            className="flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
           >
-            DEPLOY
+            <span>
+              DEPLOY
+            </span>
+            <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
           </a>
         </div>
         {children}
