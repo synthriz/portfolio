@@ -4,7 +4,7 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
 const projetos = [
   {
-    imagem: "public/projects/fateclog.png",
+    imagem: "/static/fateclog.png",
     nome: "FatecLog",
     descricao:
       "Participei da criação do novo site do FatecLog, evento anual de logística das Fatecs, como parte de uma disciplina da faculdade. O site oferece informações sobre o evento, programação, palestrantes e inscrição, com um design moderno e responsivo",
@@ -13,7 +13,7 @@ const projetos = [
     deployLink: "https://fatec-log.vercel.app/",
   },
   {
-    imagem: "public/projects/bdescola.png",
+    imagem: "static/bdescola.png",
     nome: "Banco de Dados - Escola",
     descricao:
       "O projeto Banco de Dados - Escola implementa um sistema relacional para gerenciar Estudantes, Professores, Disciplinas, Turmas e Matrículas. Utiliza SQL para manipulação de dados e DBML para modelagem visual, seguindo a Primeira Forma Normal (1FN).",
@@ -21,7 +21,7 @@ const projetos = [
     githubLink: "https://github.com/synthriz/bd-escola",
   },
   {
-    imagem: "public/projects/valentinesday.png",
+    imagem: "static/valentinesday.png",
     nome: "Happy Valentine's Day",
     descricao:
       "Um site interativo de Dia dos Namorados onde o botão `não` foge do mouse. Ao clicar em `sim`, o usuário é redirecionado para um gif de gatinho. Feito com HTML, CSS e Javascript.",
@@ -30,7 +30,7 @@ const projetos = [
     deployLink: "https://synthriz.github.io/valentines-day/",
   },
   {
-    imagem: "public/projects/expertnotes.png",
+    imagem: "static/expertnotes.png",
     nome: "Expert Notes",
     descricao:
       "Expert Notes é uma aplicação front-end responsiva que permite criar e gerenciar notas de forma simples, incluindo notas de áudio transcritas pela API SpeechRecognition. Oferece funcionalidades como busca, gravação, e persistência de dados com LocalStorage para evitar a perda de informações.",
@@ -39,7 +39,7 @@ const projetos = [
     deployLink: "https://expert-notes-nu.vercel.app/",
   },
   {
-    imagem: "public/projects/spotifyclone.png",
+    imagem: "static/spotifyclone.png",
     nome: "Spotify Clone",
     descricao:
       "Este projeto recria a página inicial do Spotify, usando HTML para a estrutura, CSS para estilização com CSS Grid, Flexbox e media queries, e JavaScript para manipulação do DOM e interatividade. A aplicação inclui uma API local para simular a busca e exibição de informações, mas a funcionalidade de busca não está disponível fora do ambiente de desenvolvimento devido a limitações no deploy.",
@@ -48,7 +48,7 @@ const projetos = [
     deployLink: "https://synthriz.github.io/spotify-clone/",
   },
   {
-    imagem: "public/projects/expertpolls.png",
+    imagem: "static/expertpolls.png",
     nome: "Expert Polls",
     descricao:
       "O projeto Expert Polls permite aos usuários criar enquetes, votar e acompanhar os resultados em tempo real. Utiliza Node.js para o backend, com dados armazenados no PostgreSQL e manipulados pelo Prisma ORM. O Redis é usado para gerenciar os votos de forma eficiente, e os resultados são atualizados em tempo real via WebSockets.",
