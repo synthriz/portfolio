@@ -30,14 +30,14 @@ export default function Skills({
         {skills.map((skill, index) => (
           <li
           key={index}
-          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black"
+          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black text-bea-black dark:text-bea-gray"
           >
             <img
               src={skill.imagem}
               alt={typeof skill.title === "string" ? skill.title : "Skill"}
-              className="h-20 md:h-40 flex-shrink-0"
+              className="h-20 md:h-40 flex-shrink-0 filter dark:invert"
             />
-              {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center">{skill.title}</h2>}
+              {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center text-bea-black dark:text-bea-white">{skill.title}</h2>}
           </li>
         ))}
       </ul>

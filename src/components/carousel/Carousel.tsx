@@ -82,9 +82,9 @@ const Carousel: FC = () => {
         {/* <aside className="krs-control krs-control--prev"> */}
         <button
           onClick={handlePrevClick}
-          className="krs-btn krs-prev flex items-center"
+          className="krs-btn krs-prev flex items-center border-bea-black"
         >
-          <IoIosArrowRoundBack style={{ fontSize: "1em" }} />
+          <IoIosArrowRoundBack style={{ fontSize: "1em" }} className="filter dark:invert" />
         </button>
       </aside>
 
@@ -105,22 +105,22 @@ const Carousel: FC = () => {
         {/* <aside className="krs-control krs-control--next"> */}
         <button
           onClick={handleNextClick}
-          className="krs-btn krs-next flex items-center"
+          className="krs-btn krs-next flex items-center border-bea-black"
         >
-          <IoIosArrowRoundForward style={{ fontSize: "1em" }} />
+          <IoIosArrowRoundForward style={{ fontSize: "1em" }} className="filter dark:invert"/>
         </button>
       </aside>
 
       {/* BOTOES MOBILE */}
 
-      <div className="flex w-full justify-between border-t-2 border-b-2 border-bea-black lg:hidden mt-4">
+      <div className="flex lg:hidden w-full justify-between border-t-2 border-b-2 border-bea-black mt-4">
         {/* botao esquerdo */}
-        <aside className="w-1/2 px-4 flex justify-center items-center border-r-2 border-current">
+        <aside className="w-1/2 px-4 flex justify-center items-center border-r-2 border-bea-black">
           <button
             onClick={handlePrevClick}
-            className="krs-btn krs-prev flex items-center my-1"
+            className="krs-btn krs-prev flex items-center my-1 border-bea-black"
           >
-            <IoIosArrowRoundBack style={{ fontSize: "2em" }} />
+            <IoIosArrowRoundBack style={{ fontSize: "2em" }} className="filter dark:invert"/>
           </button>
         </aside>
 
@@ -128,9 +128,9 @@ const Carousel: FC = () => {
         <aside className="w-1/2 px-4 flex justify-center items-center">
           <button
             onClick={handleNextClick}
-            className="krs-btn krs-next flex items-center"
+            className="krs-btn krs-next flex items-center border-bea-black"
           >
-            <IoIosArrowRoundForward style={{ fontSize: "2em" }} />
+            <IoIosArrowRoundForward style={{ fontSize: "2em" }} className="filter dark:invert"/>
           </button>
         </aside>
       </div>

@@ -51,8 +51,8 @@ export default function Projeto({
 
       {/* descriçao */}
       <div className="p-6 lg:p-10 w-full lg:w-1/2 overflow-auto no-scrollbar">
-        {nome && <h2 className="text-xl md:text-2xl font-bold mb-2">{nome}</h2>}
-        <p className="text-base md:text-xl text-gray-600 mb-4 break-words overflow-auto no-scrollbar">{descricao}</p>
+        {nome && <h2 className="text-xl md:text-2xl text-bea-black dark:text-white font-bold mb-2">{nome}</h2>}
+        <p className="text-base md:text-xl text-gray-600 dark:text-white mb-4 break-words overflow-auto no-scrollbar">{descricao}</p>
 
         {/* tecnologias */}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -60,8 +60,8 @@ export default function Projeto({
             <span
               key={index}
               className={twMerge(
-                "px-4 py-1 bg-gray-200 text-xs md:text-sm uppercase font-bold border-2 border-bea-black rounded-full",
-                index % 2 === 0 ? 'bg-bea-green text-bea-black' : 'bg-purple-300 text-bea-black' //alernando as cores com base em par ou impar pra verde/roxo
+                "px-4 py-1 bg-gray-200 text-xs md:text-sm uppercase font-bold border-2 !border-bea-black rounded-full",
+                index % 2 === 0 ? 'bg-bea-green text-bea-black' : 'bg-bea-purple text-bea-black' //alernando as cores com base em par ou impar pra verde/roxo
               )}
             >
               {tec}
@@ -73,22 +73,26 @@ export default function Projeto({
         <div className="flex space-x-4">
           <a
             href={githubLink}
-            className=" flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
+            className=" flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 !border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
           >
             <span>
               GITHUB
             </span>
             <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
           </a>
-          <a
-            href={deployLink}
-            className="flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
-          >
-            <span>
-              DEPLOY
-            </span>
-            <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
-          </a>
+          
+          {/* bota de deploy so vai aparecer caso um link tenha sido atribuido a ele */}
+          {deployLink && (
+            <a
+              href={deployLink}
+              className="flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 !border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
+            >
+              <span>
+                DEPLOY
+              </span>
+              <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
+            </a>
+          )}
         </div>
         {children}
       </div>

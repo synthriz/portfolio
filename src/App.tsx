@@ -16,6 +16,7 @@ import Skills from "./components/skills/Skills";
 import { skills } from "./util/SkillsData";
 import AboutMe from "./components/AboutMe";
 import Contato from "./components/contact/Contato";
+import ThemeToggle from "./components/ThemeToggle";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -27,11 +28,11 @@ export enum EPageSections {
   CONTATO = "contato",
 }
 
-// TO-DO : fix styles (purple HEX)
 // TO-DO : new (draggable) project carousel
 // TO-DO : eng version
 //  TO-DO : dark mode
 // TO-DO : organize folders
+// TO-DO : fix ui
 
 export default function App() {
   // const [count, setCount] = useState(0);
@@ -68,20 +69,32 @@ export default function App() {
                 <img src={computerou} />
               </a>
             </li>
+            {/* <li
+              className={twMerge(
+                "flex flex-auto flex-1",
+                "justify-center items-center max-w-min",
+                "border-r-2 border-bea-black",
+                "bg-bea-black"
+              )}
+            >
+              <ThemeToggle className="w-full h-full"/>
+            </li> */}
             <li
               className={twMerge(
                 "flex flex-auto flex-1",
                 "justify-center items-center max-w-min",
-                "bg-purple-300 border-l-2 border-current"
+                "bg-bea-purple border-l-2 border-bea-black"
               )}
             >
+              <ThemeToggle className="w-full h-full border-t-0"/>
+
               <label htmlFor="menu" className="mx-8">
-                <GiHamburgerMenu style={{ fontSize: "1.5em" }} />
+                <GiHamburgerMenu style={{ fontSize: "1.5em" }} className="filter dark:invert" />
               </label>
             </li>
           </ul>
         </div>
-        <ul className="flex flex-col md:flex-row overflow-auto navbar__buttons">
+        <ul className="flex flex-col md:flex-row overflow-auto navbar__buttons text-bea-black dark:text-bea-gray">
           {Object.values(EPageSections).map((pageSection) => {
             return (
               //declarando a construçao do <li> para cada pageSection
@@ -122,23 +135,25 @@ export default function App() {
             Desenvolvedora Front-end e UX/UI designer
           </p>
         </header>
-        <a
-          style={{ minWidth: "320px" }}
-          href={`#${EPageSections.CONTATO}`}
-          className={twMerge(
-            "flex justify-center items-center",
-            "font-medium text-center",
-            "uppercase text-base md:text-xl",
-            "border-r-2 border-current border-t-2",
-            "leading-none",
-            "p-1 h-16 w-1/2",
-            "bg-purple-300"
-          )}
-        >
-          <span>Entre em contato</span>
-          &nbsp;
-          <FiArrowRightCircle style={{ fontSize: "1.2em", marginTop: "1px" }} />
-        </a>
+        <div className="flex inline-flex w-full">
+          <a
+            href={`#${EPageSections.CONTATO}`}
+            className={twMerge(
+              "flex justify-center items-center",
+              "font-medium text-center text-bea-black", //forçando o texto preto mesmo no dark mode
+              "uppercase text-base md:text-xl",
+              "border-r-2 border-bea-black border-t-2",
+              "leading-none",
+              "p-1 h-16 w-1/2 min-w-80",
+              "bg-bea-purple"
+            )}
+          >
+            <span>Entre em contato</span>
+            &nbsp;
+            <FiArrowRightCircle style={{ fontSize: "1.2em", marginTop: "1px" }} />
+          </a>
+        <ThemeToggle className="hidden lg:flex"/>
+        </div>
       </PageSection>
 
       {/* SOBRE */}
@@ -157,10 +172,10 @@ export default function App() {
         secondaryContent={
           <div className="flex flex-row justify-self-end justify-center">
             <input type="checkbox" id="filter" />
-            <div className={twMerge("flex", "flex-row w-full overflow-auto")}>
+            <div className="flex flex-row w-full overflow-auto">
               <div className="flex lg:hidden justify-center items-center">
                 <label htmlFor="filter" className="mx-8">
-                  <IoFilter style={{ fontSize: "1em" }} />
+                  <IoFilter style={{ fontSize: "1em" }} className="filter dark:invert"/>
                 </label>
               </div>
 
@@ -176,7 +191,7 @@ export default function App() {
                 <li className="flex justify-center items-center">
                   <a
                     href=""
-                    className="bg-bea-white uppercase text-xl font-bold text-bea-black"
+                    className="uppercase text-xl font-bold text-bea-black"
                   >
                     all
                   </a>
@@ -184,7 +199,7 @@ export default function App() {
                 <li className="flex justify-center items-center">
                   <a
                     href=""
-                    className="bg-bea-white uppercase text-xl font-bold text-bea-black"
+                    className="uppercase text-xl font-bold text-bea-black"
                   >
                     front
                   </a>
@@ -192,7 +207,7 @@ export default function App() {
                 <li className="flex justify-center items-center">
                   <a
                     href=""
-                    className="bg-bea-white uppercase text-xl font-bold text-bea-black"
+                    className="uppercase text-xl font-bold text-bea-black"
                   >
                     back
                   </a>
@@ -200,7 +215,7 @@ export default function App() {
                 <li className="flex justify-center items-center">
                   <a
                     href=""
-                    className="bg-bea-white uppercase text-xl font-bold text-bea-black"
+                    className="uppercase text-xl font-bold text-bea-black"
                   >
                     soft
                   </a>
@@ -237,27 +252,24 @@ export default function App() {
             )}
           >
             <FiFileMinus
-              style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }}
+              style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }} className="stroke-bea-black"
             />
           </div>
           <div className="flex flex-col justify-between h-fit lg:h-full">
             <p className="py-6 lg:py-20 px-6 lg:px-10 mb-0 lg:mb-2 text-base md:text-xl">
               Quer saber mais sobre meu trabalho? Baixe meu currículo e confira
               minhas experiências, habilidades e projetos.
-            <pre>
-              (wip) :p
-            </pre>
             </p>
             <a
               style={{ minWidth: "50px" }}
               href=""
               className={twMerge(
                 "leading-none",
-                "uppercase font-medium text-base md:text-xl",
+                "uppercase font-medium text-bea-black text-base md:text-xl",
                 "p-1 h-16",
-                "border-current border-t-2",
+                "border-bea-black border-t-2",
                 "text-center flex justify-center items-center",
-                "bg-purple-300 w-full"
+                "bg-bea-purple w-full"
               )}
             >
               <span>MEU CURRÍCULO</span>

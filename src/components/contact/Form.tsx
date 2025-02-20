@@ -81,10 +81,10 @@ export function Form() {
             <button
               type="submit"
               disabled={isSubmitting || isSent} // desabilita o botao apos envio
-              className={`leading-none uppercase text-base md:text-xl text-bea-black p-1 h-16 border-r-2 border-current border-t-2 text-center flex justify-center items-center font-medium w-full ${
+              className={`leading-none uppercase text-base md:text-xl text-bea-black p-1 h-16 border-r-2 border-bea-black border-t-2 text-center flex justify-center items-center font-medium w-full ${
                 isSubmitting ? "bg-gray-300 cursor-not-allowed" 
                 : isSent ? "bg-bea-green cursor-not-allowed" 
-                : "bg-purple-300"
+                : "bg-bea-purple"
               }`}
             >
               <span>

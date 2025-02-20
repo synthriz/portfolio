@@ -8,9 +8,9 @@ export default function AboutMe() {
     <>
       <div className="flex-inline lg:flex items-center lg:items-stretch flex-auto overflow-hidden mobile-height">
         <div className="w-full lg:w-1/2 border-r-0 lg:border-r-2 border-bea-black p-6 md:p-8 overflow-auto no-scrollbar">
-          <p className="mb-2 text-base md:text-xl">
-            <pre>{">"}_ print("Hello, World! 👋")"</pre>
-          </p>
+            <pre className="mb-2 text-base md:text-xl">
+              {">"}_ print("Hello, World! 👋")"
+            </pre>
           <p className="mb-2 text-base md:text-xl">
             Sou apaixonada por design e desenvolvimento, e acredito que a
             criatividade e a atenção aos detalhes fazem toda a diferença. Ao
@@ -54,7 +54,7 @@ export default function AboutMe() {
       <div className="flex flex-row w-full h-auto justify-around md:justify-end gap-0 border-t-2 md:border-t-0 border-bea-black">
         <a
           href="https://github.com/synthriz"
-          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-current border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
+          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
             src={Github}
@@ -64,7 +64,7 @@ export default function AboutMe() {
         </a>
         <a
           href="https://www.behance.net/synthriz"
-          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-current border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
+          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
             src={Behance}
@@ -74,7 +74,7 @@ export default function AboutMe() {
         </a>
         <a
           href="https://www.linkedin.com/in/trizbeatavares/"
-          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-current border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
+          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
             src={Linkedin}
@@ -84,7 +84,7 @@ export default function AboutMe() {
         </a>
         <a
           href="https://br.pinterest.com/synthriz/"
-          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-current border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
+          className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
             src={Pinterest}
