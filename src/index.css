@@ -482,6 +482,12 @@ para dispositivos maiores q 580px */
 
 /* p dispositivos grandes lg */
 @media (width >= 64rem) {
+  body {
+    padding: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .mobile-height {
     height: 520px;
   }

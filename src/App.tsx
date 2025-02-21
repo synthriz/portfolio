@@ -128,7 +128,7 @@ export default function App() {
       {/* HOME */}
       <PageSection id={EPageSections.HOME} className="h-screen border-t-0">
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
-          <h1 className="bea-headline__title font-bold text-6xl md:text-7xl lg:text-9xl">
+          <h1 className="bea-headline__title font-bold text-6xl md:text-7xl lg:text-8xl">
             Beatriz Tavares
           </h1>
           <p className="bea-headline__subtitle text-xl">
@@ -152,7 +152,7 @@ export default function App() {
             &nbsp;
             <FiArrowRightCircle style={{ fontSize: "1.2em", marginTop: "1px" }} />
           </a>
-        <ThemeToggle className="hidden lg:flex"/>
+        <ThemeToggle className="hidden md:flex"/>
         </div>
       </PageSection>
 
