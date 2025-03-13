@@ -8,44 +8,47 @@ export default function AboutMe() {
     <>
       <div className="flex-inline lg:flex items-center lg:items-stretch flex-auto overflow-hidden mobile-height">
         <div className="w-full lg:w-1/2 border-r-0 lg:border-r-2 border-bea-black p-6 md:p-8 overflow-auto no-scrollbar">
-            <pre className="mb-2 text-base md:text-xl">
-              {">"}_ print("Hello, World! 👋")"
-            </pre>
+          <pre className="mb-2 text-base md:text-xl">
+            {">"}_ print("Hello, World! 👋")"
+          </pre>
           <p className="mb-2 text-base md:text-xl">
-            Sou apaixonada por design e desenvolvimento, e acredito que a
-            criatividade e a atenção aos detalhes fazem toda a diferença. Ao
-            longo da minha trajetória, aprendi que, para alcançar bons
-            resultados, não é só sobre a técnica, mas também sobre entender as
-            necessidades do usuário e criar algo que faça sentido de verdade.
+            Oi! Sou apaixonada por design e desenvolvimento, especialmente
+            quando consigo transformar ideias em algo visualmente bonito e
+            funcional. Acredito que um bom projeto não é só sobre código ou
+            estética, mas sobre criar algo que realmente faça sentido para quem
+            vai usar.
           </p>
           <p className="mb-2 text-base md:text-xl">
-            Atualmente, curso Design de Mídias Digitais na Fatec Carapicuíba, e
+            Atualmente, estudo Design de Mídias Digitais na Fatec Carapicuíba e
             atuo com foco em UX/UI e desenvolvimento front-end. Minhas
-            habilidades incluem a criação de layouts responsivos e acessíveis, a
-            integração com APIs, a modelagem e otimização de bancos de dados, e
-            a construção de interfaces interativas e funcionais, sempre
-            priorizando uma experiência de usuário fluida e intuitiva. Também
-            tenho experiência em trabalhar com metodologias ágeis, garantindo
-            entregas colaborativas e no prazo. Além disso, sou fluente em
-            inglês, o que me permite colaborar com equipes e projetos
-            internacionais com facilidade.
+            habilidades incluem a criação de interfaces interativas, responsivas
+            e acessíveis, a integração com APIs e a modelagem e otimização de bancos de
+            dados. Também tenho experiência com metodologias ágeis e gosto de
+            trabalhar em equipe para construir coisas legais. Como sou fluente
+            em inglês, consigo colaborar com projetos internacionais sem
+            dificuldade.
           </p>
           <p className="mb-2 text-base md:text-xl">
-            Gosto de desafios e de estar sempre em evolução. Eu gosto muito de
-            "criar coisas" e acredito que essa é a parte mais empolgante do que
-            eu faço. :D
+            Eu gosto muito de "criar coisas" e acredito que essa é a parte mais
+            empolgante do que eu faço. :D
           </p>
           <p className="text-base md:text-xl">
             No meu tempo livre, você pode me encontrar cuidando dos meus
-            gatinhos ou tocando guitarra, porque acredito que a inspiração está
-            em tudo, não só no trabalho. Estou sempre buscando aprender algo
-            novo, costumo levar comigo a frase de que estou sempre em
-            desenvolvimento!
+            gatinhos ou tocando guitarra, porque acredito que a criatividade vem
+            de todos os lugares. Estou sempre buscando aprender algo novo,
+            costumo levar comigo a frase de que estou sempre em desenvolvimento!
           </p>
         </div>
         <div className="w-full lg:w-1/2 mx-auto">
-          <img
+
+        {/* link pra pegar a imagem direto do github */}
+          {/* <img
             src="https://avatars.githubusercontent.com/u/111395659?v=4"
+            alt="Profile picture"
+            className="flex-auto flex items-center justify-center w-full h-full object-cover bg-gray-400 bg-opacity-20"
+          /> */}
+          <img
+            src="./static/pfp.jpeg"
             alt="Profile picture"
             className="flex-auto flex items-center justify-center w-full h-full object-cover bg-gray-400 bg-opacity-20"
           />
