@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
-import { EPageSections } from "../App";
+import { EPageSections } from "../pages/Home";
 import { twMerge } from "tailwind-merge";
 
 export interface IPageSectionProps extends PropsWithChildren {
