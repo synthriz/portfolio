@@ -12,7 +12,6 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoFilter } from "react-icons/io5";
 
-
 import PageSection from "../components/PageSection";
 import Carousel from "../components/carousel/Carousel";
 import Skills from "../components/skills/Skills";
@@ -20,6 +19,7 @@ import { skills } from "../util/SkillsData";
 import AboutMe from "../components/AboutMe";
 import Contato from "../components/contact/Contato";
 import ThemeToggle from "../components/ThemeToggle";
+import Footer from "../components/Footer";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -89,10 +89,13 @@ export default function Home() {
                 "bg-bea-purple border-l-2 border-bea-black"
               )}
             >
-              <ThemeToggle className="w-full h-full border-t-0"/>
+              <ThemeToggle className="w-full h-full border-t-0" />
 
               <label htmlFor="menu" className="mx-8">
-                <GiHamburgerMenu style={{ fontSize: "1.5em" }} className="filter dark:invert" />
+                <GiHamburgerMenu
+                  style={{ fontSize: "1.5em" }}
+                  className="filter dark:invert"
+                />
               </label>
             </li>
           </ul>
@@ -153,9 +156,11 @@ export default function Home() {
           >
             <span>Entre em contato</span>
             &nbsp;
-            <FiArrowRightCircle style={{ fontSize: "1.2em", marginTop: "1px" }} />
+            <FiArrowRightCircle
+              style={{ fontSize: "1.2em", marginTop: "1px" }}
+            />
           </a>
-        <ThemeToggle className="hidden md:flex"/>
+          <ThemeToggle className="hidden md:flex" />
         </div>
       </PageSection>
 
@@ -178,7 +183,10 @@ export default function Home() {
             <div className="flex flex-row w-full overflow-auto">
               <div className="flex lg:hidden justify-center items-center">
                 <label htmlFor="filter" className="mx-8">
-                  <IoFilter style={{ fontSize: "1em" }} className="filter dark:invert"/>
+                  <IoFilter
+                    style={{ fontSize: "1em" }}
+                    className="filter dark:invert"
+                  />
                 </label>
               </div>
 
@@ -255,7 +263,8 @@ export default function Home() {
             )}
           >
             <FiFileMinus
-              style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }} className="stroke-bea-black"
+              style={{ fontSize: "5em", marginTop: "1px", strokeWidth: "1px" }}
+              className="stroke-bea-black"
             />
           </div>
           <div className="flex flex-col justify-between h-fit lg:h-full">
@@ -292,11 +301,13 @@ export default function Home() {
           "flex flex-col",
           "bg-bea-black text-bea-green",
           "py-12 md:py-24 lg:py:48",
-          "px-6 md:px-12 lg:px-48"
+          "px-6 md:px-12 lg:px-48",
+          "mb-0 md:mb-0"
         )}
       >
         <Contato />
       </PageSection>
+      <Footer/>
     </main>
   );
 }
