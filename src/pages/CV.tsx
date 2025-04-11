@@ -81,17 +81,17 @@ const CvTriz: React.FC = () => {
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-xs">
-              <a className="flex items-center gap-1.5">
+              <a className="flex items-center gap-1.5" href="https://github.com/synthriz" target="_blank">
                 <img src={GithubIMG} alt="Github" className="w-3.5" />
                 <span>github.com/synthriz</span>
               </a>
-              <a className="flex items-center gap-1.5">
+              <a className="flex items-center gap-1.5" href="https://www.linkedin.com/in/trizbeatavares/" target="_blank">
                 <img src={LinkedinIMG} alt="LinkedIn" className="w-3.5" />
                 <span>linkedin.com/in/trizbeatavares</span>
               </a>
-              <a className="flex items-center gap-1.5">
+              <a className="flex items-center gap-1.5" href="https://trizdev.vercel.app/" target="_blank">
                 <img src={WebsiteIMG} alt="Website" className="w-3.5" />
-                <span>working on it...</span>
+                <span>trizdev.vercel.app</span>
               </a>
             </div>
           </section>

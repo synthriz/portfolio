@@ -134,7 +134,7 @@ export default function Home() {
       {/* HOME */}
       <PageSection id={EPageSections.HOME} className="h-screen border-t-0">
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
-          <h1 className="bea-headline__title font-bold text-6xl md:text-7xl lg:text-9xl">
+          <h1 className="bea-headline__title font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             Beatriz Tavares
           </h1>
           <p className="bea-headline__subtitle text-xl">

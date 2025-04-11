@@ -9,7 +9,7 @@ export default function Footer(){
             "gap-2",
             "border-bea-black border-b-2",
             "py-4 w-full h-fit",
-            "mb-9 md:mb-20"
+            // "mb-9 md:mb-20"
           )}
         >
           <a 
