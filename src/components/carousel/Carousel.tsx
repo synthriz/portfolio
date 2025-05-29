@@ -55,6 +55,15 @@ const projetos = [
     tecnologias: ["node.js", "redis", "sql", "prisma"],
     githubLink: "https://github.com/synthriz/expert-polls",
   },
+  {
+    imagem: "static/astrodypg.png",
+    nome: "Astro Landing Page Generator",
+    descricao:
+      "Criaçao de 4 templates reutilizáveis com conteúdo dinâmico gerado via CMS e faker.js. Capacidade de gerar +1000 variações únicas com foco em performance.",
+    tecnologias: ["Astro", "TinaCMS", "Tailwindcss", "javascript"],
+    githubLink: "https://github.com/synthriz/astro-landing-page-generator",
+    deployLink: "https://astro-generator.surge.sh/",
+  },
 ];
 
 const Carousel: FC = () => {
