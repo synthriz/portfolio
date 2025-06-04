@@ -1,6 +1,9 @@
 import { twMerge } from "tailwind-merge";
+import { useLanguage } from "./LanguageProvider";
 
 export default function Footer(){
+   const { language } = useLanguage();
+
     return(
         <footer>
         <div
@@ -19,11 +22,11 @@ export default function Footer(){
           rel="noopener noreferrer"
           >
             <span>
-              Feito com
+              {language === 'pt' ? "Feito com" : "Made with"}
               <span className="text-bea-purple hover:text-bea-green px-1">
                 ❤
               </span>
-              por Triz
+              {language === 'pt' ? "por Triz" : "by Triz"}
             </span>
           </a>
           {/* <a className="cursor-pointer">

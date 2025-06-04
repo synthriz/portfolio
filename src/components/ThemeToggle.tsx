@@ -38,7 +38,7 @@ export default function ThemeToggle({
         <div {...restProps} className={twMerge(
             "flex justify-center items-center",
             "bg-bea-black dark:bg-bea-green",
-            "border-t-2 border-r-2 border-bea-black px-4",
+            "border-y-2 border-x-2 border-bea-black px-4",
             className
           )}
         >

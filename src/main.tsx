@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { LanguageProvider } from "./components/LanguageProvider.tsx";
 import App from "./App.tsx";
 import "./index.css";
 
@@ -15,6 +16,8 @@ if (!rootElm) {
 }
 createRoot(rootElm).render(
   <StrictMode>
-    <App />
+    <LanguageProvider>  
+      <App />
+    </LanguageProvider>
   </StrictMode>
 );

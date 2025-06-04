@@ -2,14 +2,13 @@
 // import viteLogo from '/vite.svg'
 import { twMerge } from "tailwind-merge";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../components/LanguageProvider";
 
-import computerou from "../assets/computerou.svg";
 import {
   FiArrowRightCircle,
   FiFileMinus,
   FiExternalLink,
 } from "react-icons/fi";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { IoFilter } from "react-icons/io5";
 
 import PageSection from "../components/PageSection";
@@ -18,8 +17,8 @@ import Skills from "../components/skills/Skills";
 import { skills } from "../util/SkillsData";
 import AboutMe from "../components/AboutMe";
 import Contato from "../components/contact/Contato";
-import ThemeToggle from "../components/ThemeToggle";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -31,6 +30,25 @@ export enum EPageSections {
   CONTATO = "contato",
 }
 
+const titles = {
+  pt: {
+    [EPageSections.HOME]: "Início",
+    [EPageSections.SOBRE]: "sobre mim",
+    [EPageSections.SKILLS]: "skills",
+    [EPageSections.PROJETOS]: "projetos",
+    [EPageSections.CURRICULO]: "currículo",
+    [EPageSections.CONTATO]: "contato",
+  },
+  en: {
+    [EPageSections.HOME]: "Home",
+    [EPageSections.SOBRE]: "about me",
+    [EPageSections.SKILLS]: "skills",
+    [EPageSections.PROJETOS]: "projects",
+    [EPageSections.CURRICULO]: "curriculum vitae",
+    [EPageSections.CONTATO]: "contact",
+  },
+};
+
 // TO-DO : new (draggable) project carousel
 // TO-DO : eng version
 //  TO-DO : dark mode
@@ -40,97 +58,12 @@ export enum EPageSections {
 export default function Home() {
   // const [count, setCount] = useState(0);
 
+  const { language } = useLanguage();
+
   return (
     <main className="main-app container mx-auto mt-6 md:mt-10">
-      <nav className="container mx-auto sticky z-30" style={{ top: 0 }}>
-        {/* MENU MOBILE => INPUT E LABEL */}
-        <input type="checkbox" id="menu" />
-        <div
-          className={twMerge(
-            "flex md:hidden",
-            "justify-center w-full",
-            "border-b-2 border-t-2 border-bea-black"
-          )}
-        >
-          <ul
-            className={twMerge(
-              "flex flex-row",
-              "justify-between content-between",
-              "w-full h-12",
-              "bg-bea-white"
-            )}
-          >
-            <li
-              className={twMerge(
-                "flex flex-auto flex-1",
-                "justify-center items-center max-w-min",
-                "border-r-2 border-bea-black",
-                "bg-bea-black"
-              )}
-            >
-              <a href="#home" className="mx-8 w-6">
-                <img alt="Menu" src={computerou} />
-              </a>
-            </li>
-            {/* <li
-              className={twMerge(
-                "flex flex-auto flex-1",
-                "justify-center items-center max-w-min",
-                "border-r-2 border-bea-black",
-                "bg-bea-black"
-              )}
-            >
-              <ThemeToggle className="w-full h-full"/>
-            </li> */}
-            <li
-              className={twMerge(
-                "flex flex-auto flex-1",
-                "justify-center items-center max-w-min",
-                "bg-bea-purple border-l-2 border-bea-black"
-              )}
-            >
-              <ThemeToggle className="w-full h-full border-t-0" />
 
-              <label htmlFor="menu" className="mx-8">
-                <GiHamburgerMenu
-                  style={{ fontSize: "1.5em" }}
-                  className="filter dark:invert"
-                />
-              </label>
-            </li>
-          </ul>
-        </div>
-        <ul className="flex flex-col md:flex-row overflow-auto navbar__buttons text-bea-black dark:text-bea-gray">
-          {Object.values(EPageSections).map((pageSection) => {
-            return (
-              //declarando a construçao do <li> para cada pageSection
-              <li
-                className={twMerge(
-                  "flex-auto flex-1",
-                  "navbar__item",
-                  `navbar__item--${pageSection}` //classe personalizada p/ items do nav
-                )}
-                key={pageSection} //react thingies
-              >
-                <a
-                  href={`#${pageSection}`}
-                  className={twMerge(
-                    "flex justify-center items-center",
-                    "transition-colors duration-500",
-                    "py-2 px-6 h-20",
-                    "text-xl uppercase",
-                    "navbar__item__link",
-                    `navbar__item__link--${pageSection}` //outra classe personalizada p/ itens do nav, ne
-                  )}
-                >
-                  {pageSection}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-
+      <Navbar/>
       {/* HOME */}
       <PageSection id={EPageSections.HOME} className="h-screen border-t-0">
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
@@ -138,7 +71,7 @@ export default function Home() {
             Beatriz Tavares
           </h1>
           <p className="bea-headline__subtitle text-xl">
-            Desenvolvedora Front-end e UX/UI designer
+            {language === 'pt' ? "Desenvolvedora Front-end | UX/UI Designer" : "Front-end Developer | UX/UI Designer"}
           </p>
         </header>
         <div className="flex inline-flex w-full">
@@ -154,13 +87,12 @@ export default function Home() {
               "bg-bea-purple"
             )}
           >
-            <span>Entre em contato</span>
+            <span>{language === 'pt' ? "Entre em contato" : "Get in touch"}</span>
             &nbsp;
             <FiArrowRightCircle
               style={{ fontSize: "1.2em", marginTop: "1px" }}
             />
           </a>
-          <ThemeToggle className="hidden md:flex" />
         </div>
       </PageSection>
 
@@ -168,7 +100,7 @@ export default function Home() {
       <PageSection
         id={EPageSections.SOBRE}
         className="flex flex-col"
-        title="sobre mim"
+        title={titles[language][EPageSections.SOBRE]}
       >
         <AboutMe />
       </PageSection>
@@ -176,7 +108,7 @@ export default function Home() {
       {/* SKILLS */}
       <PageSection
         id={EPageSections.SKILLS}
-        title="skills"
+        title={titles[language][EPageSections.SKILLS]}
         secondaryContent={
           <div className="flex flex-row justify-self-end justify-center">
             <input type="checkbox" id="filter" />
@@ -240,7 +172,7 @@ export default function Home() {
       </PageSection>
 
       {/* PROJETOS */}
-      <PageSection id={EPageSections.PROJETOS} title="projetos">
+      <PageSection id={EPageSections.PROJETOS} title={titles[language][EPageSections.PROJETOS]}>
         <div className="mt-10 mb-10 w-full">
           <Carousel />
         </div>
@@ -250,7 +182,7 @@ export default function Home() {
       <PageSection
         id={EPageSections.CURRICULO}
         className="flex flex-col"
-        title="currículo"
+        title={titles[language][EPageSections.CURRICULO]}
       >
         <div className="flex items-start flex-auto overflow-hidden mobile-height small">
           <div
@@ -269,8 +201,8 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-between h-fit lg:h-full">
             <p className="py-6 lg:py-20 px-6 lg:px-10 mb-0 lg:mb-2 text-base md:text-xl">
-              Quer saber mais sobre meu trabalho? Baixe meu currículo e confira
-              minhas experiências, habilidades e projetos.
+              {language === 'pt' ? "Quer saber mais sobre meu trabalho? Baixe meu currículo e confira minhas experiências, habilidades e projetos." : "Want to know more about my work? Download my resume and check out my experiences, skills, and projects."}
+              
             </p>
             <Link
               style={{ minWidth: "50px" }}
@@ -286,7 +218,7 @@ export default function Home() {
                 "bg-bea-purple w-full"
               )}
             >
-              <span>MEU CURRÍCULO</span>
+              <span>{language === 'pt' ? "MEU CURRÍCULO" : "MY RESUME"}</span>
               &nbsp;
               <FiExternalLink style={{ fontSize: "1.2em", marginTop: "1px" }} />
             </Link>
