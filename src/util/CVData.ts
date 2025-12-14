@@ -62,7 +62,7 @@ const translations = {
       }
     ],
     // skills
-    technicalSkillsText: "HTML, CSS, Javascript, Typescript, React.js, React Native, Wordpress, Dart, Flutter, Tailwind CSS, SQL, Node.js, Git, Visual Studio Code (VSCode), GitHub, Linux, Windows, Pacote Office, Docker, Web APIs, Flexbox, Design Responsivo",
+    technicalSkillsText: "HTML, CSS, Javascript, Typescript, React.js, Next.js, React Native, Astro, Vite, Wordpress, Dart, Flutter, Tailwind CSS, SQL, Node.js, Git, Visual Studio Code (VSCode), GitHub, Linux, Windows, Pacote Office, Docker, Web APIs, Flexbox, Design Responsivo",
     uxSkillsText: "User Experience (UX), User Interface (UI), UX Research, SEO, Figma, Prototipagem, Wireframing, Wix, Kanban, Scrum, Design Thinking",
     languagesText: "Inglês Fluente, Espanhol Intermediário, Português Nativo",
     softSkillsText: "Adaptabilidade, Aprendizagem rápida, Gerenciamento do tempo, Comunicação, Trabalho em equipe, Pensamento crítico, Proatividade, Criatividade, Curiosidade",
@@ -185,7 +185,7 @@ const translations = {
       }
     ],
     // Skills
-    technicalSkillsText: "HTML, CSS, Javascript, Typescript, React.js, React Native, Wordpress, Dart, Flutter, Tailwind CSS, SQL, Node.js, Git, Visual Studio Code (VSCode), GitHub, Linux, Windows, Office Suite, Docker, Web APIs, Flexbox, Responsive Design",
+    technicalSkillsText: "HTML, CSS, Javascript, Typescript, React.js, Next.js, React Native, Astro, Vite, Wordpress, Dart, Flutter, Tailwind CSS, SQL, Node.js, Git, Visual Studio Code (VSCode), GitHub, Linux, Windows, Office Suite, Docker, Web APIs, Flexbox, Responsive Design",
     uxSkillsText: "User Experience (UX), User Interface (UI), UX Research, SEO, Figma, Prototyping, Wireframing, Wix, Kanban, Scrum, Design Thinking",
     languagesText: "Fluent English, Intermediate Spanish, Native Portuguese",
     softSkillsText: "Adaptability, Quick Learning, Time Management, Communication, Teamwork, Critical Thinking, Proactivity, Creativity, Curiosity",

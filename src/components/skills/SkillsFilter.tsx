@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
 import { IoFilter } from "react-icons/io5";
+import { twMerge } from "tailwind-merge";
 
 export interface ISkillsFilterProps {
   selectedFilter: string;
@@ -31,9 +31,12 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
         >
           <li className="flex justify-center items-center">
             <button
-              onClick={() => onChange("all")}
+              onClick={(e) => {
+                onChange("all");
+                e.currentTarget.blur();
+              }}
               className={twMerge(
-                "uppercase text-xl font-bold",
+                "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
                 selectedFilter === "all" ? "text-bea-purple" : "text-bea-black"
               )}
             >
@@ -42,9 +45,12 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
           </li>
           <li className="flex justify-center items-center">
             <button
-              onClick={() => onChange("front")}
+              onClick={(e) => {
+                onChange("front");
+                e.currentTarget.blur();
+              }}
               className={twMerge(
-                "uppercase text-xl font-bold",
+                "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
                 selectedFilter === "front" ? "text-bea-purple" : "text-bea-black"
               )}
             >
@@ -53,24 +59,30 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
           </li>
           <li className="flex justify-center items-center">
             <button
-              onClick={() => onChange("back")}
+              onClick={(e) => {
+                onChange("mobile");
+                e.currentTarget.blur();
+              }}
               className={twMerge(
-                "uppercase text-xl font-bold",
-                selectedFilter === "back" ? "text-bea-purple" : "text-bea-black"
-              )}
-            >
-              back
-            </button>
-          </li>
-          <li className="flex justify-center items-center">
-            <button
-              onClick={() => onChange("mobile")}
-              className={twMerge(
-                "uppercase text-xl font-bold",
+                "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
                 selectedFilter === "mobile" ? "text-bea-purple" : "text-bea-black"
               )}
             >
               mobile
+            </button>
+          </li>
+          <li className="flex justify-center items-center">
+            <button
+              onClick={(e) => {
+                onChange("tools");
+                e.currentTarget.blur();
+              }}
+              className={twMerge(
+                "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
+                selectedFilter === "tools" ? "text-bea-purple" : "text-bea-black"
+              )}
+            >
+              tools
             </button>
           </li>
         </ul>
