@@ -26,8 +26,8 @@ export default function AboutMe() {
                 Atualmente, estudo Design de Mídias Digitais na Fatec Carapicuíba e
                 atuo com foco em UX/UI e desenvolvimento front-end. Minhas
                 habilidades incluem a criação de interfaces interativas, responsivas
-                e acessíveis, a integração com APIs e a modelagem e otimização de bancos de
-                dados. Também tenho experiência com metodologias ágeis e gosto de
+                e acessíveis, integração com APIs e desenvolvimento de aplicações
+                mobile com React Native. Também tenho experiência com metodologias ágeis e gosto de
                 trabalhar em equipe para construir coisas legais. Como sou fluente
                 em inglês, consigo colaborar com projetos internacionais sem
                 dificuldade.
@@ -49,7 +49,7 @@ export default function AboutMe() {
                 Hi! I'm passionate about design and development, especially when I get to turn ideas into something visually beautiful and functional. I believe a good project isn't just about code or aesthetics, but about creating something that truly makes sense for the person who's going to use it.
               </p>
               <p className="mb-2 text-base md:text-xl">
-                I'm currently studying Digital Media Design at Fatec Carapicuíba and working with a focus on UX/UI and front-end development. My skills include building interactive, responsive, and accessible interfaces, integrating with APIs, and modeling and optimizing databases. I also have experience with agile methodologies and enjoy working in a team to build cool stuff. Since I'm fluent in English, I can collaborate on international projects with ease.
+                I'm currently studying Digital Media Design at Fatec Carapicuíba and working with a focus on UX/UI and front-end development. My skills include building interactive, responsive, and accessible interfaces, integrating with APIs, and developing mobile applications with React Native. I also have experience with agile methodologies and enjoy working in a team to build cool stuff. Since I'm fluent in English, I can collaborate on international projects with ease.
               </p>
               <p className="mb-2 text-base md:text-xl">
                 I really love "creating things," and I think that's the most exciting part of what I do. :D
