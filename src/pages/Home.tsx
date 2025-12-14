@@ -1,24 +1,25 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { twMerge } from "tailwind-merge";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 import { useLanguage } from "../components/LanguageProvider";
 
 import {
   FiArrowRightCircle,
-  FiFileMinus,
   FiExternalLink,
+  FiFileMinus,
 } from "react-icons/fi";
-import { IoFilter } from "react-icons/io5";
 
-import PageSection from "../components/PageSection";
-import Carousel from "../components/carousel/Carousel";
-import Skills from "../components/skills/Skills";
-import { skills } from "../util/SkillsData";
 import AboutMe from "../components/AboutMe";
+import Carousel from "../components/carousel/Carousel";
 import Contato from "../components/contact/Contato";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import PageSection from "../components/PageSection";
+import Skills from "../components/skills/Skills";
+import SkillsFilter from "../components/skills/SkillsFilter";
+import { skills } from "../util/SkillsData";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {
@@ -59,11 +60,17 @@ export default function Home() {
   // const [count, setCount] = useState(0);
 
   const { language } = useLanguage();
+  const [selectedFilter, setSelectedFilter] = useState<string>("all");
+
+  // filtra as skills baseado na area selecionada
+  const filteredSkills = selectedFilter === "all"
+    ? skills
+    : skills.filter(skill => skill.area?.includes(selectedFilter));
 
   return (
     <main className="main-app container mx-auto mt-6 md:mt-10">
 
-      <Navbar/>
+      <Navbar />
       {/* HOME */}
       <PageSection id={EPageSections.HOME} className="h-screen border-t-0">
         <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
@@ -74,7 +81,7 @@ export default function Home() {
             {language === 'pt' ? "Desenvolvedora Front-end | UX/UI Designer" : "Front-end Developer | UX/UI Designer"}
           </p>
         </header>
-        <div className="flex inline-flex w-full">
+        <div className="flex w-full">
           <a
             href={`#${EPageSections.CONTATO}`}
             className={twMerge(
@@ -110,65 +117,13 @@ export default function Home() {
         id={EPageSections.SKILLS}
         title={titles[language][EPageSections.SKILLS]}
         secondaryContent={
-          <div className="flex flex-row justify-self-end justify-center">
-            <input type="checkbox" id="filter" />
-            <div className="flex flex-row w-full overflow-auto">
-              <div className="flex lg:hidden justify-center items-center">
-                <label htmlFor="filter" className="mx-8">
-                  <IoFilter
-                    style={{ fontSize: "1em" }}
-                    className="filter dark:invert"
-                  />
-                </label>
-              </div>
-
-              {/* TO-DO : filtro de skills */}
-              <ul
-                className={twMerge(
-                  "hidden lg:flex",
-                  "flex-row content-between",
-                  "gap-6 justify-center items-center",
-                  "pr-12 overflow-auto"
-                )}
-              >
-                <li className="flex justify-center items-center">
-                  <a
-                    href=""
-                    className="uppercase text-xl font-bold text-bea-black"
-                  >
-                    all
-                  </a>
-                </li>
-                <li className="flex justify-center items-center">
-                  <a
-                    href=""
-                    className="uppercase text-xl font-bold text-bea-black"
-                  >
-                    front
-                  </a>
-                </li>
-                <li className="flex justify-center items-center">
-                  <a
-                    href=""
-                    className="uppercase text-xl font-bold text-bea-black"
-                  >
-                    back
-                  </a>
-                </li>
-                <li className="flex justify-center items-center">
-                  <a
-                    href=""
-                    className="uppercase text-xl font-bold text-bea-black"
-                  >
-                    soft
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <SkillsFilter
+            selectedFilter={selectedFilter}
+            onChange={setSelectedFilter}
+          />
         }
       >
-        <Skills skills={skills} />
+        <Skills skills={filteredSkills} />
       </PageSection>
 
       {/* PROJETOS */}
@@ -202,7 +157,7 @@ export default function Home() {
           <div className="flex flex-col justify-between h-fit lg:h-full">
             <p className="py-6 lg:py-20 px-6 lg:px-10 mb-0 lg:mb-2 text-base md:text-xl">
               {language === 'pt' ? "Quer saber mais sobre meu trabalho? Baixe meu currículo e confira minhas experiências, habilidades e projetos." : "Want to know more about my work? Download my resume and check out my experiences, skills, and projects."}
-              
+
             </p>
             <Link
               style={{ minWidth: "50px" }}
@@ -239,7 +194,7 @@ export default function Home() {
       >
         <Contato />
       </PageSection>
-      <Footer/>
+      <Footer />
     </main>
   );
 }

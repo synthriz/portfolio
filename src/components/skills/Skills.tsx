@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactNode, useRef } from "react";
-import { twMerge } from "tailwind-merge";
 import { useDraggable } from "react-use-draggable-scroll";
+import { twMerge } from "tailwind-merge";
 
 export interface ISkillsProps extends PropsWithChildren {
   skills: {
@@ -22,26 +22,26 @@ export default function Skills({
 
   return (
     <div {...restProps} className={twMerge("w-full p-0 m-0 overflow-y-scroll no-scrollbar mobile-height", className)}
-    {...events}
-    ref={ref}>
+      {...events}
+      ref={ref}>
       <ul
-      className="flex flex-wrap gap-0 p-0 justify-center w-full skills-class"
+        className="flex flex-wrap gap-0 p-0 justify-center w-full skills-class"
       >
         {skills.map((skill, index) => (
           <li
-          key={index}
-          className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black text-bea-black dark:text-bea-gray"
+            key={index}
+            className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black text-bea-black dark:text-bea-gray"
           >
             <img
               src={skill.imagem}
               alt={typeof skill.title === "string" ? skill.title : "Skill"}
-              className="h-20 md:h-40 flex-shrink-0 filter dark:invert"
+              className="h-20 md:h-40 shrink-0 filter dark:invert"
             />
-              {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center text-bea-black dark:text-bea-white">{skill.title}</h2>}
+            {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center text-bea-black dark:text-bea-white">{skill.title}</h2>}
           </li>
         ))}
       </ul>
-  </div>
+    </div>
   );
 }
 
