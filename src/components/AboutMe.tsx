@@ -78,6 +78,8 @@ export default function AboutMe() {
       <div className="flex flex-row w-full h-auto justify-around md:justify-end gap-0 border-t-2 md:border-t-0 border-bea-black">
         <a
           href="https://github.com/synthriz"
+          target="_blank"
+          rel="noopener noreferrer"
           className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
@@ -88,6 +90,8 @@ export default function AboutMe() {
         </a>
         <a
           href="https://www.behance.net/synthriz"
+          target="_blank"
+          rel="noopener noreferrer"
           className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
@@ -98,6 +102,8 @@ export default function AboutMe() {
         </a>
         <a
           href="https://www.linkedin.com/in/trizbeatavares/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-r-2 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
@@ -108,6 +114,8 @@ export default function AboutMe() {
         </a>
         <a
           href="https://br.pinterest.com/synthriz/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4"
         >
           <img
