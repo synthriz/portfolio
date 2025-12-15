@@ -4,10 +4,8 @@ Feito em React/Typescript
 <details>
   <summary> to-do </summary>
    <ul>
-     <li>eng version</li>
      <li>ajustar UI navbar</li>
      <li>novo carousel draggable</li>
-     <li>filtro funcional</li>
      <li>organizar pastas</li>
    </ul>
 </details>
