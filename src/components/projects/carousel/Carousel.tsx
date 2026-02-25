@@ -35,7 +35,9 @@ const Carousel: FC = () => {
       <aside className="hidden lg:flex items-center px-4 border-t-2 border-b-2 border-bea-black">
         {/* <aside className="krs-control krs-control--prev"> */}
         <button
+          type="button"
           onClick={handlePrevClick}
+          aria-label={language === "pt" ? "Projeto anterior" : "Previous project"}
           className="krs-btn krs-prev flex items-center border-bea-black"
         >
           <IoIosArrowRoundBack style={{ fontSize: "1em" }} className="filter dark:invert" />
@@ -58,7 +60,9 @@ const Carousel: FC = () => {
       <aside className="hidden lg:flex items-center px-4 border-t-2 border-b-2 border-bea-black">
         {/* <aside className="krs-control krs-control--next"> */}
         <button
+          type="button"
           onClick={handleNextClick}
+          aria-label={language === "pt" ? "Próximo projeto" : "Next project"}
           className="krs-btn krs-next flex items-center border-bea-black"
         >
           <IoIosArrowRoundForward style={{ fontSize: "1em" }} className="filter dark:invert"/>
@@ -71,7 +75,9 @@ const Carousel: FC = () => {
         {/* botao esquerdo */}
         <aside className="w-1/2 px-4 flex justify-center items-center border-r-2 border-bea-black">
           <button
+            type="button"
             onClick={handlePrevClick}
+            aria-label={language === "pt" ? "Projeto anterior" : "Previous project"}
             className="krs-btn krs-prev flex items-center my-1 border-bea-black"
           >
             <IoIosArrowRoundBack style={{ fontSize: "2em" }} className="filter dark:invert"/>
@@ -81,7 +87,9 @@ const Carousel: FC = () => {
         {/* botao direito */}
         <aside className="w-1/2 px-4 flex justify-center items-center">
           <button
+            type="button"
             onClick={handleNextClick}
+            aria-label={language === "pt" ? "Próximo projeto" : "Next project"}
             className="krs-btn krs-next flex items-center border-bea-black"
           >
             <IoIosArrowRoundForward style={{ fontSize: "2em" }} className="filter dark:invert"/>

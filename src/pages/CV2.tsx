@@ -43,8 +43,10 @@ const CvTriz: React.FC = () => {
     <>
       <div className="flex flex-col justify-center items-center min-h-screen w-full p-0">
         {/* botao pra baixar \/ */}
-        <a
+        <button
+          type="button"
           onClick={downloadPDF}
+          aria-label="Baixar currículo em PDF"
           className={twMerge(
             "text-center flex justify-center items-center",
             "mb-4 p-4 h-16 gap-4",
@@ -57,7 +59,7 @@ const CvTriz: React.FC = () => {
             baixar como PDF
           </span>
           <FiDownload style={{ fontSize: "1.2em", marginTop: "1px" }} />
-        </a>
+        </button>
         {/* tamanho padrao de folha sulfite: 210mm x 297mm */}
         {/* <main className="w-[210mm] h-[297mm] bg-white p-6 shadow-lg"> */}
         <main
@@ -71,25 +73,25 @@ const CvTriz: React.FC = () => {
               Desenvolvedora Front-end e UX/UI Designer
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <a className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5">
                 <img src={EmailIMG} alt="Email" className="w-4" />
                 <span>beatrizqtavares@gmail.com</span>
-              </a>
-              <a className="flex items-center gap-1.5">
+              </div>
+              <div className="flex items-center gap-1.5">
                 <img src={LocalIMG} alt="Localização" className="w-4" />
                 <span>Barueri, SP</span>
-              </a>
+              </div>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-xs">
-              <a className="flex items-center gap-1.5" href="https://github.com/synthriz" target="_blank">
+              <a className="flex items-center gap-1.5" href="https://github.com/synthriz" target="_blank" rel="noopener noreferrer">
                 <img src={GithubIMG} alt="Github" className="w-3.5" />
                 <span>github.com/synthriz</span>
               </a>
-              <a className="flex items-center gap-1.5" href="https://www.linkedin.com/in/trizbeatavares/" target="_blank">
+              <a className="flex items-center gap-1.5" href="https://www.linkedin.com/in/trizbeatavares/" target="_blank" rel="noopener noreferrer">
                 <img src={LinkedinIMG} alt="LinkedIn" className="w-3.5" />
                 <span>linkedin.com/in/trizbeatavares</span>
               </a>
-              <a className="flex items-center gap-1.5" href="https://trizdev.vercel.app/" target="_blank">
+              <a className="flex items-center gap-1.5" href="https://trizdev.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <img src={WebsiteIMG} alt="Website" className="w-3.5" />
                 <span>trizdev.vercel.app</span>
               </a>

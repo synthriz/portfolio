@@ -73,6 +73,9 @@ export default function Projeto({
         <div className="flex space-x-4">
           <a
             href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Abrir repositório do projeto ${typeof nome === "string" ? nome : ""} no GitHub`}
             className=" flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 !border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
           >
             <span>
@@ -85,6 +88,9 @@ export default function Projeto({
           {deployLink && (
             <a
               href={deployLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir deploy do projeto ${typeof nome === "string" ? nome : ""} em nova aba`}
               className="flex flex-row gap-2 px-4 py-2 bg-white text-xs md:text-sm border-2 !border-bea-black text-bea-black font-bold hover:bg-gray-400 transition duration-300"
             >
               <span>

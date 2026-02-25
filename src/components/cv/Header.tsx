@@ -12,25 +12,25 @@ const Header: React.FC = () => {
         Front-end Developer | UX/UI Designer
       </p>
       <div className="flex flex-wrap gap-2 justify-center items-center">
-        <a className="inline-flex items-center gap-1" aria-label="Email Address" >
+        <div className="inline-flex items-center gap-1" aria-label="Email Address">
           <img src={EmailIMG} className="w-4.5" alt="Email" />
           <span>beatrizqtavares@gmail.com</span>
-        </a>
-        <a className="inline-flex items-center gap-1" aria-label="Address">
+        </div>
+        <div className="inline-flex items-center gap-1" aria-label="Address">
           <img src={LocalIMG} className="w-4.5" alt="Address" />
           <span>Barueri, São Paulo, BRA</span>
-        </a>
+        </div>
       </div>
       <div className="flex flex-wrap gap-2 justify-center items-center text-sm">
-        <a className="inline-flex items-center gap-1" aria-label="Github" href="https://github.com/synthriz">
+        <a className="inline-flex items-center gap-1" aria-label="Github" href="https://github.com/synthriz" target="_blank" rel="noopener noreferrer">
           <img src={GithubIMG} className="w-3.5" alt="Github" />
           <span>github.com/synthriz</span>
         </a>
-        <a className="inline-flex items-center gap-1" aria-label="LinkedIn" href="https://www.linkedin.com/in/trizbeatavares/">
+        <a className="inline-flex items-center gap-1" aria-label="LinkedIn" href="https://www.linkedin.com/in/trizbeatavares/" target="_blank" rel="noopener noreferrer">
           <img src={LinkedinIMG} className="w-3.5" alt="LinkedIn" />
           <span>linkedin.com/in/trizbeatavares</span>
         </a>
-        <a className="inline-flex items-center gap-1" aria-label="Website" href="https://trizdev.vercel.app/">
+        <a className="inline-flex items-center gap-1" aria-label="Website" href="https://trizdev.vercel.app/" target="_blank" rel="noopener noreferrer">
           <img src={WebsiteIMG} className="w-3.5" alt="Website" />
           <span>https://trizdev.vercel.app/</span>
         </a>

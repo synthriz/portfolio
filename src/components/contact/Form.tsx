@@ -49,9 +49,9 @@ export function Form() {
   return (
     <>
       <div className="flex flex-col justify-center w-full h-full">
-        <form action="https://formsubmit.co/7b982feddaef68b02527e7214b08f704" method="POST" onSubmit={handleSubmit} className="space-y-4 md:space-y-6 text-base md:text-xl text-bea-white">
+        <form action="https://formsubmit.co/7b982feddaef68b02527e7214b08f704" method="POST" onSubmit={handleSubmit} className="space-y-4 md:space-y-6 text-base md:text-xl text-bea-white" aria-busy={isSubmitting}>
           {/* anti spam - honeypot invisivel*/}
-          <input type="text" name="_honey" className="hidden" />
+          <input type="text" name="_honey" className="hidden" aria-hidden="true" tabIndex={-1} autoComplete="off" />
 
           {/* desativa captcha padrao */}
           <input type="hidden" name="_captcha" value="false" />
@@ -63,6 +63,7 @@ export function Form() {
               name="name"
               type="text"
               placeholder={language === 'pt' ? "Digite seu nome..." : "Enter your name..."}
+              autoComplete="name"
               className="border-2 border-bea-white p-2 bg-bea-black w-full"
               required
             />
@@ -74,6 +75,7 @@ export function Form() {
               name="email"
               type="email"
               placeholder={language === 'pt' ? "Digite seu email..." : "Enter your email..."}
+              autoComplete="email"
               className="border-2 border-bea-white p-2 bg-bea-black w-full"
               required
             />
@@ -85,6 +87,7 @@ export function Form() {
               name="message"
               placeholder={language === 'pt' ? "Digite seu mensagem..." : "Enter your message..."}
               maxLength={500}
+              autoComplete="off"
               className="border-2 border-bea-white p-2 bg-bea-black h-32 w-full overflow-y-scroll no-scrollbar resize-none"
               required
             />
@@ -105,6 +108,13 @@ export function Form() {
                   : language === "pt" ? "Enviar" : "Send"}
             </span>
           </button>
+          <p role="status" aria-live="polite" className="sr-only">
+            {isSubmitting
+              ? language === "pt" ? "Enviando formulário." : "Sending form."
+              : isSent
+                ? language === "pt" ? "Formulário enviado." : "Form sent."
+                : ""}
+          </p>
         </form>
       </div>
     </>

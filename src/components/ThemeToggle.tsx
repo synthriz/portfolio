@@ -42,7 +42,12 @@ export default function ThemeToggle({
             className
           )}
         >
-            <button onClick={toggleTheme}>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
+              title={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
+            >
                 {
                     
                     isDarkMode && <IoSunny className="text-bea-black fill-current"/>

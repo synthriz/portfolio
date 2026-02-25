@@ -1,6 +1,6 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 import { useLanguage } from "../components/LanguageProvider";
@@ -67,8 +67,29 @@ export default function Home() {
     ? skills
     : skills.filter(skill => skill.area?.includes(selectedFilter));
 
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    document.title =
+      language === "pt"
+        ? "Beatriz Tavares | Desenvolvedora Front-end e UX/UI Designer"
+        : "Beatriz Tavares | Front-end Developer and UX/UI Designer";
+
+    const description =
+      language === "pt"
+        ? "Portfólio de Beatriz Tavares com projetos de front-end, UX/UI, habilidades técnicas e currículo."
+        : "Beatriz Tavares portfolio with front-end projects, UX/UI work, technical skills and resume.";
+
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute("content", description);
+    }
+  }, [language]);
+
   return (
     <main className="main-app container mx-auto mt-6 md:mt-10">
+      <a href={`#${EPageSections.HOME}`} className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:p-2 focus:z-50">
+        {language === "pt" ? "Pular para o conteúdo principal" : "Skip to main content"}
+      </a>
 
       <Navbar />
       {/* HOME */}
@@ -84,6 +105,7 @@ export default function Home() {
         <div className="flex w-full">
           <a
             href={`#${EPageSections.CONTATO}`}
+            aria-label={language === "pt" ? "Ir para seção de contato" : "Go to contact section"}
             className={twMerge(
               "flex justify-center items-center",
               "font-medium text-center text-bea-black", //forçando o texto preto mesmo no dark mode

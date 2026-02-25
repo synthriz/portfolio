@@ -62,9 +62,9 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="container mx-auto sticky z-30 relative" style={{ top: 0 }}>
+        <nav className="container mx-auto sticky z-30 relative" style={{ top: 0 }} aria-label="Navegação principal">
             {/* MENU MOBILE => INPUT E LABEL */}
-            <input type="checkbox" id="menu" />
+            <input type="checkbox" id="menu" aria-hidden="true" tabIndex={-1} />
             <div
                 className={twMerge(
                     "flex md:hidden",
@@ -88,8 +88,8 @@ export default function Navbar() {
                             "bg-bea-black"
                         )}
                     >
-                        <a href="#home" className="mx-6 w-6" onClick={(e) => scrollToSection("home", e)}>
-                            <img alt="Menu" src={computerou} />
+                        <a href="#home" className="mx-6 w-6" onClick={(e) => scrollToSection("home", e)} aria-label="Ir para a seção inicial">
+                            <img alt="" src={computerou} aria-hidden="true" />
                         </a>
                     </li>
                     {/* <li
@@ -105,7 +105,9 @@ export default function Navbar() {
                     <li className="flex flex-auto flex-1 justify-center items-center">
                         <div className="flex items-center justify-center w-full h-full">
                             <button
+                                type="button"
                                 onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
+                                aria-label={language === "pt" ? "Trocar idioma para inglês" : "Switch language to Portuguese"}
                                 className="cursor-pointer z-50 text-center flex justify-center items-center p-4 h-full w-full gap-4 uppercase text-xl font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-r-2 border-black dark:border-bea-gray"
                             >
                                 {language === "pt" ? "PTBR" : "ENG"}
@@ -123,7 +125,20 @@ export default function Navbar() {
                             "bg-bea-purple border-l-2 border-bea-black"
                         )}
                     >
-                        <label htmlFor="menu" className="mx-8">
+                        <label
+                            htmlFor="menu"
+                            className="mx-8 cursor-pointer"
+                            role="button"
+                            tabIndex={0}
+                            aria-label={language === "pt" ? "Abrir ou fechar menu" : "Open or close menu"}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    const checkbox = document.getElementById("menu") as HTMLInputElement | null;
+                                    if (checkbox) checkbox.checked = !checkbox.checked;
+                                }
+                            }}
+                        >
                             <GiHamburgerMenu
                                 style={{ fontSize: "1.5em" }}
                                 className="filter dark:invert"
@@ -170,7 +185,9 @@ export default function Navbar() {
                 <li>
                     <div className="hidden md:flex items-center justify-center w-24 h-full">
                         <button
+                            type="button"
                             onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
+                            aria-label={language === "pt" ? "Switch language to English" : "Trocar idioma para português"}
                             className="cursor-pointer z-50 text-center flex justify-center items-center p-4 h-full w-full gap-4 uppercase text-xl font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-b-2 border-t-2 border-black dark:border-bea-gray"
                         >
                             {language === "pt" ? "ENG" : "PTBR"}

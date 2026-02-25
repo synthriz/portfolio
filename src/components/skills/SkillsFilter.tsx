@@ -60,7 +60,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
                     onClick={() => handleFilterChange("all")}
                     className={twMerge(
                       "w-full text-left px-4 py-3 uppercase font-bold text-lg border-b-2 border-bea-black",
-                      selectedFilter === "all" ? "bg-bea-purple text-white" : "bg-white text-bea-black hover:bg-gray-100"
+                      selectedFilter === "all" ? "bg-bea-purple text-white dark:text-bea-black" : "bg-white dark:bg-bea-black text-bea-black dark:text-white hover:bg-gray-100"
                     )}
                   >
                     all
@@ -71,7 +71,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
                     onClick={() => handleFilterChange("front")}
                     className={twMerge(
                       "w-full text-left px-4 py-3 uppercase font-bold text-lg border-b-2 border-bea-black",
-                      selectedFilter === "front" ? "bg-bea-purple text-white" : "bg-white text-bea-black hover:bg-gray-100"
+                      selectedFilter === "front" ? "bg-bea-purple text-white dark:text-bea-black" : "bg-white dark:bg-bea-black text-bea-black dark:text-white hover:bg-gray-100"
                     )}
                   >
                     front
@@ -82,7 +82,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
                     onClick={() => handleFilterChange("mobile")}
                     className={twMerge(
                       "w-full text-left px-4 py-3 uppercase font-bold text-lg border-b-2 border-bea-black",
-                      selectedFilter === "mobile" ? "bg-bea-purple text-white" : "bg-white text-bea-black hover:bg-gray-100"
+                      selectedFilter === "mobile" ? "bg-bea-purple text-white dark:text-bea-black" : "bg-white dark:bg-bea-black text-bea-black dark:text-white hover:bg-gray-100"
                     )}
                   >
                     mobile
@@ -93,7 +93,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
                     onClick={() => handleFilterChange("tools")}
                     className={twMerge(
                       "w-full text-left px-4 py-3 uppercase font-bold text-lg",
-                      selectedFilter === "tools" ? "bg-bea-purple text-white" : "bg-white text-bea-black hover:bg-gray-100"
+                      selectedFilter === "tools" ? "bg-bea-purple text-white dark:text-bea-black" : "bg-white dark:bg-bea-black text-bea-black dark:text-white hover:bg-gray-100"
                     )}
                   >
                     tools
@@ -121,7 +121,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
               }}
               className={twMerge(
                 "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
-                selectedFilter === "all" ? "text-bea-purple" : "text-bea-black"
+                selectedFilter === "all" ? "text-bea-purple" : "text-bea-black dark:text-white"
               )}
             >
               all
@@ -135,7 +135,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
               }}
               className={twMerge(
                 "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
-                selectedFilter === "front" ? "text-bea-purple" : "text-bea-black"
+                selectedFilter === "front" ? "text-bea-purple" : "text-bea-black dark:text-white"
               )}
             >
               front
@@ -149,7 +149,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
               }}
               className={twMerge(
                 "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
-                selectedFilter === "mobile" ? "text-bea-purple" : "text-bea-black"
+                selectedFilter === "mobile" ? "text-bea-purple" : "text-bea-black dark:text-white"
               )}
             >
               mobile
@@ -163,7 +163,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
               }}
               className={twMerge(
                 "uppercase text-xl font-bold focus-visible:outline-2 focus-visible:outline-bea-purple",
-                selectedFilter === "tools" ? "text-bea-purple" : "text-bea-black"
+                selectedFilter === "tools" ? "text-bea-purple" : "text-bea-black dark:text-white"
               )}
             >
               tools

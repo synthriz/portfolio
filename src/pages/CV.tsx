@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/cv/Header';
 import EducationItem from '../components/cv/Education';
 import ExperienceItem from '../components/cv/Experience';
@@ -14,6 +14,24 @@ const CVTriz: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const currentTranslation = translations[language];
+
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    document.title =
+      language === "pt"
+        ? "Currículo | Beatriz Tavares"
+        : "Resume | Beatriz Tavares";
+
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute(
+        "content",
+        language === "pt"
+          ? "Currículo de Beatriz Tavares com experiência, formação, projetos e habilidades."
+          : "Beatriz Tavares resume with experience, education, projects and skills."
+      );
+    }
+  }, [language]);
 
   const printCV = () => {
     window.print();

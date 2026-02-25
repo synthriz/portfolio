@@ -58,10 +58,13 @@ export default function AboutMe() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Abrir ${social.label} em nova aba`}
             className={`leading-none uppercase text-lg font-bold w-1/4 md:w-auto p-1 h-16 ${index !== content.socials.length - 1 ? "border-r-2 " : ""}border-bea-black border-t-0 md:border-t-2 text-center flex flex-none md:flex-1 justify-center items-center gap-0 md:gap-4`}
           >
             <img
               src={socialIcons[social.id]}
+              alt=""
+              aria-hidden="true"
               className="h-12 md:h-full p-1 justify-self-center"
             />
             <span className="sr-only md:not-sr-only"> {social.label} </span>
