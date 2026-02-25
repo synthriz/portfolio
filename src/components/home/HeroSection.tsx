@@ -11,19 +11,19 @@ export default function HeroSection({
   contactSectionId,
 }: HeroSectionProps) {
   return (
-    <>
-      <header className="bea-headline flex flex-col justify-center w-4/5 mx-auto">
-        <h1 className="bea-headline__title font-bold text-6xl md:text-7xl mid:text-7xl lg:text-9xl">
+    <div className="flex h-full flex-col">
+      <header className="bea-headline flex flex-1 flex-col justify-center h-auto w-4/5 mx-auto">
+        <h1 className="bea-headline__title hero-title font-bold">
           Beatriz Tavares
         </h1>
-        <p className="bea-headline__subtitle text-xl">
+        <p className="bea-headline__subtitle hero-subtitle max-w-[40ch]">
           {language === "pt"
             ? "Desenvolvedora Front-end | UX/UI Designer"
             : "Front-end Developer | UX/UI Designer"}
         </p>
       </header>
 
-      <div className="flex w-full">
+      <div className="mt-auto flex w-full">
         <a
           href={`#${contactSectionId}`}
           aria-label={
@@ -34,18 +34,24 @@ export default function HeroSection({
           className={twMerge(
             "flex justify-center items-center",
             "font-medium text-center text-bea-black",
-            "uppercase text-base md:text-xl",
-            "border-r-2 border-bea-black border-t-2",
+            "uppercase text-[clamp(0.9rem,0.75rem+0.6vw,1.2rem)]",
+            "border-bea-black border-t-2 md:border-r-2",
             "leading-none",
-            "p-1 h-16 w-1/2 min-w-80",
+            "h-[clamp(3.25rem,6vw,4rem)] px-[clamp(0.75rem,1.5vw,1.25rem)]",
+            "w-full md:w-1/2 md:min-w-80",
             "bg-bea-purple"
           )}
         >
           <span>{language === "pt" ? "Entre em contato" : "Get in touch"}</span>
           &nbsp;
-          <FiArrowRightCircle style={{ fontSize: "1.2em", marginTop: "1px" }} />
+          <FiArrowRightCircle
+            style={{
+              fontSize: "clamp(1rem, 0.9rem + 0.6vw, 1.35rem)",
+              marginTop: "1px",
+            }}
+          />
         </a>
       </div>
-    </>
+    </div>
   );
 }

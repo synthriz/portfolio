@@ -76,7 +76,7 @@ export default function Navbar() {
                     className={twMerge(
                         "flex flex-row",
                         "justify-between items-stretch",
-                        "w-full h-12",
+                        "w-full h-[clamp(3rem,8vw,3.5rem)]",
                         "bg-bea-white"
                     )}
                 >
@@ -108,7 +108,7 @@ export default function Navbar() {
                                 type="button"
                                 onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
                                 aria-label={language === "pt" ? "Trocar idioma para inglês" : "Switch language to Portuguese"}
-                                className="cursor-pointer z-50 text-center flex justify-center items-center p-4 h-full w-full gap-4 uppercase text-xl font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-r-2 border-black dark:border-bea-gray"
+                                className="cursor-pointer z-50 text-center flex justify-center items-center p-[clamp(0.5rem,1.8vw,1rem)] h-full w-full gap-2 uppercase text-[clamp(0.85rem,0.7rem+0.6vw,1.1rem)] font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-r-2 border-black dark:border-bea-gray"
                             >
                                 {language === "pt" ? "PTBR" : "ENG"}
                             </button>
@@ -167,8 +167,9 @@ export default function Navbar() {
                                     className={twMerge(
                                         "flex justify-center items-center",
                                         "transition-colors duration-500",
-                                        "py-2 px-4 h-20",
-                                        "text-xl uppercase",
+                                        "h-[clamp(3.5rem,6.5vw,5rem)]",
+                                        "px-[clamp(0.75rem,1.3vw,1.2rem)]",
+                                        "text-[clamp(0.85rem,0.65rem+0.65vw,1.2rem)] uppercase",
                                         "navbar__item__link",
                                         `navbar__item__link--${pageSection}`
                                     )}
@@ -180,15 +181,15 @@ export default function Navbar() {
                 })}
 
                 <li>
-                    <ThemeToggle className="hidden md:flex w-24 h-full" />
+                    <ThemeToggle className="hidden md:flex w-[clamp(4rem,7vw,6rem)] h-full" />
                 </li>
                 <li>
-                    <div className="hidden md:flex items-center justify-center w-24 h-full">
+                    <div className="hidden md:flex items-center justify-center w-[clamp(4rem,7vw,6rem)] h-full">
                         <button
                             type="button"
                             onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
                             aria-label={language === "pt" ? "Switch language to English" : "Trocar idioma para português"}
-                            className="cursor-pointer z-50 text-center flex justify-center items-center p-4 h-full w-full gap-4 uppercase text-xl font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-b-2 border-t-2 border-black dark:border-bea-gray"
+                            className="cursor-pointer z-50 text-center flex justify-center items-center p-[clamp(0.5rem,1.2vw,1rem)] h-full w-full gap-2 uppercase text-[clamp(0.85rem,0.65rem+0.5vw,1.1rem)] font-medium text-black dark:text-white dark:bg-bea-black bg-bea-green border-b-2 border-t-2 border-black dark:border-bea-gray"
                         >
                             {language === "pt" ? "ENG" : "PTBR"}
                         </button>
