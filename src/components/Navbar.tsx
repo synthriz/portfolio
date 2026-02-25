@@ -1,4 +1,5 @@
 import { twMerge } from "tailwind-merge";
+import type { MouseEvent } from "react";
 
 import computerou from "../assets/computerou.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -37,6 +38,29 @@ export default function Navbar() {
     const { language, setLanguage } = useLanguage();
     const currentTranslation = translations[language];
 
+    // fecha o menu mobile desmarcando o checkbox #menu
+    const closeMenu = () => {
+        if (typeof document === "undefined") return;
+        const checkbox = document.getElementById("menu") as HTMLInputElement | null;
+        if (checkbox) checkbox.checked = false;
+    };
+
+    // faz scroll suave para a secao, fecha o menu e atualiza a url sem pular
+    const scrollToSection = (section: string, e?: MouseEvent<HTMLAnchorElement>) => {
+        if (e && typeof e.preventDefault === "function") e.preventDefault();
+        closeMenu();
+        if (typeof document === "undefined") return;
+        const el = document.getElementById(section);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        try {
+            history.pushState(null, "", `#${section}`);
+        } catch (err) {
+            // ignore
+        }
+    };
+
     return (
         <nav className="container mx-auto sticky z-30 relative" style={{ top: 0 }}>
             {/* MENU MOBILE => INPUT E LABEL */}
@@ -64,7 +88,7 @@ export default function Navbar() {
                             "bg-bea-black"
                         )}
                     >
-                        <a href="#home" className="mx-6 w-6">
+                        <a href="#home" className="mx-6 w-6" onClick={(e) => scrollToSection("home", e)}>
                             <img alt="Menu" src={computerou} />
                         </a>
                     </li>
@@ -122,19 +146,20 @@ export default function Navbar() {
                             )}
                             key={pageSection}
                         >
-                            <a
-                                href={`#${pageSection}`}
-                                className={twMerge(
-                                    "flex justify-center items-center",
-                                    "transition-colors duration-500",
-                                    "py-2 px-4 h-20",
-                                    "text-xl uppercase",
-                                    "navbar__item__link",
-                                    `navbar__item__link--${pageSection}`
-                                )}
-                            >
-                                {currentTranslation[key as keyof typeof currentTranslation]}
-                            </a>
+                                <a
+                                    href={`#${pageSection}`}
+                                    onClick={(e) => scrollToSection(pageSection, e)}
+                                    className={twMerge(
+                                        "flex justify-center items-center",
+                                        "transition-colors duration-500",
+                                        "py-2 px-4 h-20",
+                                        "text-xl uppercase",
+                                        "navbar__item__link",
+                                        `navbar__item__link--${pageSection}`
+                                    )}
+                                >
+                                    {currentTranslation[key as keyof typeof currentTranslation]}
+                                </a>
                         </li>
                     );
                 })}
