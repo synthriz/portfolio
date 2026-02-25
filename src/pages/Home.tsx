@@ -11,8 +11,8 @@ import {
   FiFileMinus,
 } from "react-icons/fi";
 
-import AboutMe from "../components/AboutMe";
-import Carousel from "../components/carousel/Carousel";
+import AboutMe from "../components/aboutme/AboutMe";
+import Carousel from "../components/projects/carousel/Carousel";
 import Contato from "../components/contact/Contato";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";

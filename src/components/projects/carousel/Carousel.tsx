@@ -1,8 +1,8 @@
 import { useState, FC } from "react";
 import Projeto from "../Card-projeto";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { getProjetos } from "../../util/ProjetosData";
-import { useLanguage } from "../LanguageProvider";
+import { getProjetos } from "../../../util/ProjetosData";
+import { useLanguage } from "../../LanguageProvider";
 
 
 const Carousel: FC = () => {
