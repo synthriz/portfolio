@@ -35,27 +35,22 @@ export default function ThemeToggle({
     };
 
     return (
-        <div {...restProps} className={twMerge(
+        <button
+          type="button"
+          {...restProps}
+          className={twMerge(
             "flex justify-center items-center",
             "bg-bea-black dark:bg-bea-green",
+            "cursor-pointer",
             "border-y-2 border-x-2 border-bea-black px-4",
             className
           )}
+          onClick={toggleTheme}
+          aria-label={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
+          title={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
         >
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
-              title={isDarkMode ? "Ativar tema claro" : "Ativar tema escuro"}
-            >
-                {
-                    
-                    isDarkMode && <IoSunny className="text-bea-black fill-current"/>
-                }
-                {
-                    !isDarkMode && <IoMoon className="text-bea-green fill-current" />
-                }
-            </button>
-        </div>
+            {isDarkMode && <IoSunny className="text-bea-black fill-current" />}
+            {!isDarkMode && <IoMoon className="text-bea-green fill-current" />}
+        </button>
     );
 }
