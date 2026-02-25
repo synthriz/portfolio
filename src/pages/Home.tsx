@@ -19,7 +19,7 @@ import Navbar from "../components/Navbar";
 import PageSection from "../components/PageSection";
 import Skills from "../components/skills/Skills";
 import SkillsFilter from "../components/skills/SkillsFilter";
-import { skills } from "../util/SkillsData";
+import { skills } from "../data/SkillsData";
 
 // substituto pra vários <li> do navbar
 export enum EPageSections {

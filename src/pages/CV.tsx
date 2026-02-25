@@ -7,7 +7,7 @@ import Section from '../components/cv/Section';
 import { FiDownload, FiChevronDown } from 'react-icons/fi';
 
 //arquivo com todos os textos, em portugues e ingles
-import translations from '../util/CVData';
+import translations from '../data/CVData';
 
 const CVTriz: React.FC = () => {
   const [language, setLanguage] = useState<'pt' | 'en'>('pt');

@@ -1,7 +1,4 @@
-import Behance from "../assets/socials/behance.svg";
-import Github from "../assets/socials/github.svg";
-import Linkedin from "../assets/socials/linkedin.svg";
-import Pinterest from "../assets/socials/pinterest.svg";
+import { Behance, Github, Linkedin, Pinterest } from "../../assets/socials";
 import aboutMeData from "../../data/aboutMe.json";
 import { useLanguage } from "../LanguageProvider";
 
