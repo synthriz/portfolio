@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '../components/cv/Header';
 import EducationItem from '../components/cv/Education';
 import ExperienceItem from '../components/cv/Experience';
@@ -12,6 +12,8 @@ import translations from '../data/CVData';
 const CVTriz: React.FC = () => {
   const [language, setLanguage] = useState<'pt' | 'en'>('pt');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const currentTranslation = translations[language];
 
@@ -37,6 +39,39 @@ const CVTriz: React.FC = () => {
     window.print();
   };
 
+  useEffect(() => {
+    if (!dropdownOpen) return;
+
+    const onClickOutside = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node;
+      const clickedButton = dropdownButtonRef.current?.contains(target);
+      const clickedDropdown = dropdownRef.current?.contains(target);
+
+      if (!clickedButton && !clickedDropdown) {
+        setDropdownOpen(false);
+      }
+    };
+
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setDropdownOpen(false);
+      dropdownButtonRef.current?.focus();
+    };
+
+    document.addEventListener("mousedown", onClickOutside);
+    document.addEventListener("touchstart", onClickOutside);
+    document.addEventListener("keydown", onEscape);
+
+    const firstAction = dropdownRef.current?.querySelector<HTMLButtonElement>("button");
+    firstAction?.focus();
+
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("touchstart", onClickOutside);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, [dropdownOpen]);
+
 
 //dropdown de escolher linguagem
   const toggleDropdown = () => {
@@ -54,7 +89,13 @@ const CVTriz: React.FC = () => {
       <div className='print:hidden flex items-center justify-center m-6'>
         <div className="relative">
           <button
+            ref={dropdownButtonRef}
+            type="button"
             onClick={toggleDropdown}
+            aria-haspopup="menu"
+            aria-expanded={dropdownOpen}
+            aria-controls="cv-actions-menu"
+            aria-label={language === 'pt' ? "Abrir opções do currículo" : "Open resume options"}
             className="cursor-pointer z-50 text-center flex justify-center items-center mb-4 p-4 h-16 gap-4 uppercase text-xl font-medium text-black bg-bea-purple border-2 border-black"
           >
             {currentTranslation.saveAsPdf}
@@ -63,8 +104,16 @@ const CVTriz: React.FC = () => {
           </button>
           
           {dropdownOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white border-2 border-black shadow-lg z-60">
+            <div
+              id="cv-actions-menu"
+              ref={dropdownRef}
+              role="menu"
+              aria-label={language === 'pt' ? "Opções de currículo" : "Resume options"}
+              className="absolute top-full left-0 right-0 bg-white border-2 border-black shadow-lg z-60"
+            >
               <button
+                type="button"
+                role="menuitem"
                 onClick={printCV}
                 className="w-full px-4 py-3 text-left hover:bg-gray-100 flex items-center gap-2 border-b border-gray-200"
               >
@@ -76,12 +125,18 @@ const CVTriz: React.FC = () => {
                   {language === 'pt' ? 'Idioma' : 'Language'}
                 </div>
                 <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={language === 'pt'}
                   onClick={() => selectLanguage('pt')}
                   className={`w-full px-4 py-2 text-left hover:bg-gray-100 ${language === 'pt' ? 'bg-bea-purple text-black' : ''}`}
                 >
                   {currentTranslation.portuguese}
                 </button>
                 <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={language === 'en'}
                   onClick={() => selectLanguage('en')}
                   className={`w-full px-4 py-2 text-left hover:bg-gray-100 ${language === 'en' ? 'bg-bea-purple text-black' : ''}`}
                 >
@@ -94,7 +149,7 @@ const CVTriz: React.FC = () => {
       </div>
       
       <div className="cv-print-root flex justify-center items-center bg-gray-100 font-sans">
-        <main id="cv-print-main" className="cv-print-main px-4 leading-tight justify-center items-center">
+        <main id="cv-print-main" className="cv-print-main px-4 leading-tight justify-center items-center" aria-label={language === 'pt' ? "Currículo de Beatriz Tavares" : "Beatriz Tavares resume"}>
 
           <Header />
 

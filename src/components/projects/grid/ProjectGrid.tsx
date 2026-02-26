@@ -21,6 +21,7 @@ export default function ProjectGrid() {
   );
   const [modalProject, setModalProject] = useState<ProjetoDataItem | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const modalContentRef = useRef<HTMLDivElement | null>(null);
   const previousFocusedRef = useRef<HTMLElement | null>(null);
 
   const visibleProjects = isDesktop
@@ -46,9 +47,49 @@ export default function ProjectGrid() {
   useEffect(() => {
     if (!modalProject) return;
 
+    const getFocusableElements = () => {
+      if (!modalContentRef.current) return [] as HTMLElement[];
+      return Array.from(
+        modalContentRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((element) => {
+        const isHidden = element.getAttribute("aria-hidden") === "true";
+        return !isHidden;
+      });
+    };
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setModalProject(null);
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusableElements = getFocusableElements();
+      if (!focusableElements.length) {
+        event.preventDefault();
+        closeButtonRef.current?.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      const activeElement = document.activeElement as HTMLElement | null;
+      const isFocusInsideModal = !!activeElement && focusableElements.includes(activeElement);
+
+      if (event.shiftKey) {
+        if (!isFocusInsideModal || activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        }
+        return;
+      }
+
+      if (!isFocusInsideModal || activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
       }
     };
 
@@ -137,7 +178,7 @@ export default function ProjectGrid() {
                     id={ctaId}
                     className="mt-2 text-[0.68rem] font-bold uppercase tracking-wide sm:hidden text-bea-black dark:text-bea-white"
                   >
-                    <span className="underline decoration-2 underline-offset-2 decoration-bea-purple">
+                    <span className="underline decoration-2 underline-offset-2 decoration-bea-green">
                       {language === "pt" ? "toque para saber mais" : "tap to learn more"}
                     </span>
                   </p>
@@ -179,6 +220,7 @@ export default function ProjectGrid() {
           onClick={() => setModalProject(null)}
         >
           <div
+            ref={modalContentRef}
             className="w-full max-w-[72rem] max-h-[92vh] overflow-hidden border-2 border-bea-black bg-bea-white"
             onClick={(event) => event.stopPropagation()}
           >

@@ -11,7 +11,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, technologies, descript
       <p className="font-bold">{title}</p>
       <p>{technologies}</p>
       <p>{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="text-xs underline" aria-label={`Abrir projeto ${title} em nova aba`}>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs underline"
+        aria-label={`${title} (opens in a new tab / abre em nova aba)`}
+      >
         {link}
       </a>
     </article>
