@@ -21,7 +21,10 @@ export default function Skills({
   className,
   ...restProps
 }: ISkillsProps) {
+  const isMin580 = useMediaQuery("(min-width: 580px)");
+  const isMd = useMediaQuery("(min-width: 768px)");
   const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const is2xl = useMediaQuery("(min-width: 1536px)");
   const [mobileVisibleCount, setMobileVisibleCount] = useState(
     MOBILE_INITIAL_SKILLS
   );
@@ -29,6 +32,13 @@ export default function Skills({
     ? skills
     : skills.slice(0, mobileVisibleCount);
   const allSkillsLoaded = mobileVisibleCount >= skills.length;
+  const columnCount = is2xl ? 3 : isMd ? 2 : isMin580 ? 3 : 2;
+  const totalVisible = visibleSkills.length;
+  const lastRowCount = totalVisible % columnCount === 0
+    ? columnCount
+    : totalVisible % columnCount;
+  const lastRowStart = totalVisible - lastRowCount;
+  const previousRowStart = lastRowStart - columnCount;
 
   const ref =
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>; //coisas da lib de arrastar o scroll
@@ -57,21 +67,39 @@ export default function Skills({
       >
         <ul
           id="skills-grid-list"
-          className="flex flex-wrap gap-0 p-0 justify-center w-full skills-class"
+          className="grid w-full p-0 m-0 list-none"
+          style={{ gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))` }}
         >
-          {visibleSkills.map((skill, index) => (
-            <li
-              key={index}
-              className="flex-custom items-center justify-center md:justify-start gap-2 lg:gap-6 list-none py-4 md:py-8 px-4 md:px-8 lg:px-12 border-b-2 border-bea-black text-bea-black dark:text-bea-gray"
-            >
-              <img
-                src={skill.imagem}
-                alt={typeof skill.title === "string" ? skill.title : "Skill"}
-                className="h-20 md:h-40 shrink-0 filter dark:invert"
-              />
-              {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center text-bea-black dark:text-bea-white">{skill.title}</h2>}
-            </li>
-          ))}
+          {visibleSkills.map((skill, index) => {
+            const isLastColumn = (index + 1) % columnCount === 0;
+            const isFirstRow = index < columnCount;
+            const isInLastRow = index >= lastRowStart;
+            const needsBottomFallback =
+              !isInLastRow &&
+              lastRowCount < columnCount &&
+              previousRowStart >= 0 &&
+              index >= previousRowStart + lastRowCount &&
+              index < previousRowStart + columnCount;
+
+            return (
+              <li
+                key={index}
+                className={twMerge(
+                  "flex flex-col md:flex-row items-center justify-center md:justify-start gap-2 lg:gap-6 py-4 md:py-8 px-4 md:px-8 lg:px-12 text-bea-black dark:text-bea-gray border-bea-black dark:border-bea-gray",
+                  !isFirstRow && "border-t-2",
+                  !isLastColumn && "border-r-2",
+                  needsBottomFallback && "border-b-2"
+                )}
+              >
+                <img
+                  src={skill.imagem}
+                  alt={typeof skill.title === "string" ? skill.title : "Skill"}
+                  className="h-20 md:h-40 shrink-0 filter dark:invert"
+                />
+                {skill.title && <h2 className="uppercase mb-0 font-bold text-xl md:text-2xl text-center text-bea-black dark:text-bea-white">{skill.title}</h2>}
+              </li>
+            );
+          })}
         </ul>
       </div>
       {!isDesktop && skills.length > MOBILE_INITIAL_SKILLS && (
@@ -85,7 +113,7 @@ export default function Skills({
             )
           }
           controlsId="skills-grid-list"
-          className="border-y-0"
+          className="border-b-0"
         />
       )}
     </>
