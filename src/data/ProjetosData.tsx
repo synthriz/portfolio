@@ -1,3 +1,12 @@
+export interface ProjetoDataItem {
+  imagem: string;
+  nome: string;
+  descricao: string;
+  tecnologias: string[];
+  githubLink: string;
+  deployLink?: string;
+}
+
 export function getProjetos(language: "pt" | "en") {
   return [
     {
@@ -87,5 +96,5 @@ export function getProjetos(language: "pt" | "en") {
       githubLink: "https://github.com/synthriz/expert-polls",
     },
 
-  ];
+  ] satisfies ProjetoDataItem[];
 }
