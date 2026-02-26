@@ -52,7 +52,7 @@ const translations = {
       {
         course: "Design de Mídias Digitais",
         period: "jun. 2023 - jun. 2026",
-        institution: "Fatec Carapicuíba",
+        institution: "Fatec Barueri",
         details: ["Percentual de Rendimento (PR): 9.41/10"]
       },
       {
@@ -175,7 +175,7 @@ const translations = {
       {
         course: "Digital Media Design",
         period: "Jun. 2023 - Jun. 2026",
-        institution: "Fatec Carapicuíba",
+        institution: "Fatec Barueri",
         details: ["Performance Percentage (PR): 9.41/10"]
       },
       {
