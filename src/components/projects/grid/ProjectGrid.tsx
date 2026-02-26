@@ -137,7 +137,9 @@ export default function ProjectGrid() {
                     id={ctaId}
                     className="mt-2 text-[0.68rem] font-bold uppercase tracking-wide sm:hidden text-bea-black dark:text-bea-white"
                   >
-                    {language === "pt" ? "toque para saber mais" : "tap to learn more"}
+                    <span className="underline decoration-2 underline-offset-2 decoration-bea-purple">
+                      {language === "pt" ? "toque para saber mais" : "tap to learn more"}
+                    </span>
                   </p>
                 </div>
 
