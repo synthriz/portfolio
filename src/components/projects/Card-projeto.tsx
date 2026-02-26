@@ -9,6 +9,7 @@ export interface IProjetoProps extends PropsWithChildren {
   tecnologias: string[];
   githubLink: string;
   deployLink?: string;
+  variant?: "carousel" | "expanded";
   className?: string;
 }
 
@@ -19,21 +20,23 @@ export default function Projeto({
   tecnologias,
   githubLink,
   deployLink,
+  variant = "carousel",
   className,
   children,
   ...restProps
 }: IProjetoProps) {
   const carouselHeight = "28rem";
+  const isCarousel = variant === "carousel";
 
   return (
     <article
       {...restProps}
       className={twMerge(
         "flex flex-col lg:flex-row w-full",
-        "krs-height",
+        isCarousel ? "krs-height" : "h-full",
         "overflow-hidden",
-        // "h-96 max-h-96",
-        "border-0 lg:border-2 border-bea-black",
+        isCarousel ? "border-0 lg:border-2" : "border-2",
+        "border-bea-black",
         "text-bea-black",
         "bg-bea-white",
         className
@@ -44,8 +47,13 @@ export default function Projeto({
         <img
           src={imagem}
           alt={typeof nome === "string" ? nome : "Projeto"}
-          className="w-full h-36 lg:h-full object-cover text-center border-b-2 lg:border-b-0 border-t-2 lg:border-t-0 border-r-0 lg:border-r-2 border-bea-black bg-opacity-40 bg-gray-400"
-          style={{ lineHeight: carouselHeight, filter: "brightness(80%)" }}
+          className={twMerge(
+            "w-full object-cover text-center border-bea-black bg-opacity-40 bg-gray-400",
+            isCarousel
+              ? "h-36 lg:h-full border-b-2 lg:border-b-0 border-t-2 lg:border-t-0 border-r-0 lg:border-r-2"
+              : "h-48 lg:h-full border-b-2 lg:border-b-0 lg:border-r-2"
+          )}
+          style={isCarousel ? { lineHeight: carouselHeight, filter: "brightness(80%)" } : undefined}
         />
       </div>
 
