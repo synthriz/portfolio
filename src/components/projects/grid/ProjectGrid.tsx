@@ -155,7 +155,7 @@ export default function ProjectGrid() {
               )
             }
             controlsId="project-grid-list"
-            className="border-t-0"
+            className="border-b-0"
           />
         )}
       </div>
