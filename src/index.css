@@ -234,6 +234,49 @@ body.dark .bg-bea-white {
   body.dark .navbar__item__link:active {
     color: rgba(var(--bea-green-rgb), var(--tw-text-opacity));
   }
+
+  .project-grid {
+    gap: 0;
+    background-color: rgb(var(--bea-white-rgb));
+  }
+
+  body.dark .project-grid {
+    background-color: rgb(var(--bea-black-rgb));
+  }
+
+  .project-grid-card {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    vertical-align: top;
+    appearance: none;
+    -webkit-appearance: none;
+    line-height: 1;
+  }
+
+  .project-grid-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .project-grid-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (min-width: 40rem) {
+    .project-grid-description {
+      -webkit-line-clamp: 3;
+    }
+  }
 }
 
 /* custom vars */

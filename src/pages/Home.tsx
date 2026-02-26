@@ -1,16 +1,16 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useLanguage } from "../components/LanguageProvider";
 
 import AboutMe from "../components/aboutme/AboutMe";
-import Carousel from "../components/projects/carousel/Carousel";
 import Contato from "../components/contact/Contato";
 import Footer from "../components/Footer";
 import HeroSection from "../components/home/HeroSection";
 import Navbar from "../components/Navbar";
 import PageSection from "../components/PageSection";
+import ProjectGrid from "../components/projects/grid/ProjectGrid";
 import ResumeSection from "../components/home/ResumeSection";
 import Skills from "../components/skills/Skills";
 import SkillsFilter from "../components/skills/SkillsFilter";
@@ -58,9 +58,12 @@ export default function Home() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
 
   // filtra as skills baseado na area selecionada
-  const filteredSkills = selectedFilter === "all"
-    ? skills
-    : skills.filter(skill => skill.area?.includes(selectedFilter));
+  const filteredSkills = useMemo(
+    () => (selectedFilter === "all"
+      ? skills
+      : skills.filter(skill => skill.area?.includes(selectedFilter))),
+    [selectedFilter]
+  );
 
   useEffect(() => {
     document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
@@ -117,8 +120,8 @@ export default function Home() {
 
       {/* PROJETOS */}
       <PageSection id={EPageSections.PROJETOS} title={titles[language][EPageSections.PROJETOS]}>
-        <div className="mt-10 mb-10 w-full">
-          <Carousel />
+        <div className=" w-full">
+          <ProjectGrid />
         </div>
       </PageSection>
 
