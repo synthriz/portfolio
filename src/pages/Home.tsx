@@ -120,7 +120,7 @@ export default function Home() {
 
       {/* PROJETOS */}
       <PageSection id={EPageSections.PROJETOS} title={titles[language][EPageSections.PROJETOS]}>
-        <div className=" w-full">
+        <div className="w-full">
           <ProjectGrid />
         </div>
       </PageSection>

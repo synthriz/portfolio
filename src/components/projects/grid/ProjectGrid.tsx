@@ -73,7 +73,7 @@ export default function ProjectGrid() {
       <div className="project-grid-wrapper relative overflow-visible">
         <ul
           id="project-grid-list"
-          className="project-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          className="project-grid grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-0 lg:grid-cols-3 xl:grid-cols-4"
         >
           {visibleProjects.map((project, index) => {
             const ctaText =
@@ -94,9 +94,13 @@ export default function ProjectGrid() {
               key={project.githubLink}
               className={twMerge(
                 "project-grid-item relative overflow-visible border-bea-black dark:border-bea-gray",
-                !isFirstRow && "border-t-2",
-                !isLastColumn && "border-r-2",
-                needsBottomFallback && "border-b-2"
+                isSm
+                  ? twMerge(
+                    !isFirstRow && "border-t-2",
+                    !isLastColumn && "border-r-2",
+                    needsBottomFallback && "border-b-2"
+                  )
+                  : twMerge("border-b-2", !isFirstRow && "border-t-2")
               )}
             >
               <button
@@ -104,6 +108,7 @@ export default function ProjectGrid() {
                 onClick={() => setModalProject(project)}
                 className={twMerge(
                   "project-grid-card group relative block w-full aspect-square text-left overflow-hidden",
+                  "flex flex-col items-stretch justify-start",
                   "bg-bea-white transition-colors duration-200",
                   "cursor-pointer"
                 )}
@@ -114,21 +119,23 @@ export default function ProjectGrid() {
                     : `Open details for ${project.nome}`
                 }
               >
-                <img
-                  src={project.imagem}
-                  alt={project.nome}
-                  className="block w-full h-[65%] object-cover border-b-2 border-bea-black"
-                />
-                <div className="p-3">
+                <div className="h-[65%] w-full shrink-0 overflow-hidden border-b-2 border-bea-black dark:border-bea-gray">
+                  <img
+                    src={project.imagem}
+                    alt={project.nome}
+                    className="block h-full w-full object-cover object-top align-top"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col justify-start p-3">
                   <h3 className="text-sm md:text-base font-bold uppercase">
                     {project.nome}
                   </h3>
-                  <p className="text-xs md:text-sm mt-1 max-h-10 overflow-hidden">
+                  <p className="project-grid-description text-xs md:text-sm mt-1">
                     {project.descricao}
                   </p>
                   <p
                     id={ctaId}
-                    className="mt-2 text-[0.68rem] font-bold uppercase tracking-wide sm:hidden"
+                    className="mt-2 text-[0.68rem] font-bold uppercase tracking-wide sm:hidden text-bea-black dark:text-bea-white"
                   >
                     {language === "pt" ? "toque para saber mais" : "tap to learn more"}
                   </p>
@@ -155,7 +162,7 @@ export default function ProjectGrid() {
               )
             }
             controlsId="project-grid-list"
-            className="border-b-0"
+            className="border-y-0"
           />
         )}
       </div>
