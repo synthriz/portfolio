@@ -45,15 +45,29 @@ export default function Navbar() {
         if (checkbox) checkbox.checked = false;
     };
 
-    // faz scroll suave para a secao, fecha o menu e atualiza a url sem pular
+    const getNavbarHeight = () => {
+        if (typeof document === "undefined") return 0;
+        const navbar = document.querySelector("nav[aria-label='Navegação principal']") as HTMLElement | null;
+        return navbar?.getBoundingClientRect().height ?? 0;
+    };
+
+    // faz scroll suave para a secao com offset da navbar sticky
     const scrollToSection = (section: string, e?: MouseEvent<HTMLAnchorElement>) => {
         if (e && typeof e.preventDefault === "function") e.preventDefault();
         closeMenu();
         if (typeof document === "undefined") return;
-        const el = document.getElementById(section);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        window.requestAnimationFrame(() => {
+            const el = document.getElementById(section);
+            if (!el) return;
+
+            const navbarHeight = getNavbarHeight();
+            const top = window.scrollY + el.getBoundingClientRect().top - navbarHeight;
+
+            window.scrollTo({
+                top: Math.max(0, top),
+                behavior: "smooth",
+            });
+        });
         try {
             history.pushState(null, "", `#${section}`);
         } catch (err) {
