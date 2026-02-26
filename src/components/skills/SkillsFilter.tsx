@@ -40,7 +40,7 @@ export default function SkillsFilter({ selectedFilter, onChange }: ISkillsFilter
           >
             <IoFilter
               style={{ fontSize: "1.2em" }}
-              className="filter dark:invert"
+              className="text-bea-black filter dark:invert"
             />
           </button>
         </div>
