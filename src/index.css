@@ -535,6 +535,58 @@ body.dark .bg-bea-white {
   }
 
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-print-root {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    background: #fff !important;
+  }
+
+  .cv-print-main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    background: #fff !important;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .cv-print-main section,
+  .cv-print-main article,
+  .cv-print-main ul,
+  .cv-print-main li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-print-main a[href]::after,
+  .cv-print-main abbr[title]::after {
+    content: "" !important;
+  }
+}
+
 /* default index.css */
 
 /*

@@ -93,8 +93,8 @@ const CVTriz: React.FC = () => {
         </div>
       </div>
       
-      <div className="flex justify-center items-center bg-gray-100 font-sans">
-        <main className="px-4 leading-tight justify-center items-center">
+      <div className="cv-print-root flex justify-center items-center bg-gray-100 font-sans">
+        <main id="cv-print-main" className="cv-print-main px-4 leading-tight justify-center items-center">
 
           <Header />
 
