@@ -4,11 +4,9 @@ Feito em React/Typescript
 <details>
   <summary> to-do </summary>
    <ul>
-     <li>ajustar UI navbar</li>
-     <li>novo carousel draggable</li>
-     <li>organizar pastas</li>
+     <li>all done!</li>
    </ul>
 </details>
 
 ### Protótipo/Preview:
-![image](https://github.com/user-attachments/assets/6977f886-13af-448b-b9e6-07c76bd0a305)
+<img width="1257" height="834" alt="image" src="https://github.com/user-attachments/assets/793c8ce7-e073-473e-89de-9e7765a27691" />
