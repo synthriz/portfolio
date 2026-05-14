@@ -87,37 +87,43 @@ const translations = {
         title: "FatecLog – Site do Evento",
         technologies: "React.js, JavaScript, Tailwind CSS",
         description: "Desenvolvimento colaborativo do site oficial do evento FatecLog. Projeto com foco em responsividade, acessibilidade e estrutura modular.",
-        link: "fatec-log.vercel.app/"
+        link: "https://fatec-log.vercel.app/"
+      },
+      {
+        title: "Pixel Art Coloring Book",
+        technologies: "Vue.js, JavaScript, Vite, Pinia, Web Workers, CSS, image-q",
+        description: "Aplicação que transforma imagens em puzzle de colorir pixel art, com grid em canvas, zoom/pan, validação de cor e exportação em PNG.",
+        link: "https://synthriz.github.io/pixel-art-coloring-book/"
+      },
+      {
+        title: "Gerador de CV",
+        technologies: "React.js, TypeScript, Tailwind CSS",
+        description: "Aplicação web para criar e editar currículos com múltiplos templates, exportação em PDF e foco em compatibilidade ATS.",
+        link: "https://cv-generator-nu-ten.vercel.app"
+      },
+      {
+        title: "RPG HTML",
+        technologies: "Next.js, React, TypeScript, CSS, Node.js",
+        description: "Idle RPG em ASCII para navegador com combate automático, loot procedural, progressão offline, upgrades e salvamento local.",
+        link: "https://rpg-html.vercel.app/"
       },
       {
         title: "Astro Landing Page Generator",
         technologies: "Astro, TinaCMS, TypeScript, Faker.js",
         description: "Criação de 4 templates reutilizáveis com conteúdo dinâmico gerado via CMS e faker.js. Capacidade de gerar +1000 variações únicas com foco em performance.",
-        link: "astro-generator.surge.sh/"
+        link: "https://astro-generator.surge.sh/"
+      },
+      {
+        title: "Happy Valentine's Day",
+        technologies: "HTML, CSS, JavaScript",
+        description: "Site interativo de Dia dos Namorados onde o botão 'não' foge do mouse e o 'sim' redireciona para um gif de gatinho.",
+        link: "https://synthriz.github.io/valentines-day/"
       },
       {
         title: "Expert Notes",
         technologies: "React.js, TypeScript, TailwindCSS, Web Speech API, LocalStorage",
         description: "Aplicação front-end responsiva para criação e gerenciamento de notas (texto e voz), com transcrição automática via Web Speech API (SpeechRecognition), busca em tempo real e persistência de dados com LocalStorage.",
-        link: "github.com/synthriz/expert-notes"
-      },
-      {
-        title: "Banco de Dados - Escola",
-        technologies: "SQL, DBML",
-        description: "Sistema relacional para gerenciamento de Estudantes, Professores, Disciplinas, Turmas e Matrículas. Desenvolvido com SQL e modelagem visual em DBML, seguindo os princípios da Primeira Forma Normal (1FN).",
-        link: "github.com/synthriz/bd-escola"
-      },
-      {
-        title: "Expert Polls",
-        technologies: "Node.js, PostgreSQL, Prisma ORM, Redis, WebSockets",
-        description: "Aplicação web para criação de enquetes com votos em tempo real. Utiliza Node.js no backend, PostgreSQL com Prisma para persistência dos dados, Redis para gerenciamento de votos e WebSockets para atualização dinâmica dos resultados.",
-        link: "github.com/synthriz/expert-polls"
-      },
-      {
-        title: "Happy Valentine's Day",
-        technologies: "HTML, CSS, JavaScript",
-        description: "Site interativo criado para o Dia dos Namorados com lógica divertida: o botão 'não' desvia do mouse, e o 'sim' redireciona para um gif de gatinho. Desenvolvido with HTML, CSS e JavaScript puro.",
-        link: "github.com/synthriz/valentines-day"
+        link: "https://expert-notes-nu.vercel.app/"
       }
     ]
   },
@@ -210,37 +216,43 @@ const translations = {
         title: "FatecLog – Event Website",
         technologies: "React.js, JavaScript, Tailwind CSS",
         description: "Collaborative development of the official FatecLog event website. Project focused on responsiveness, accessibility and modular structure.",
-        link: "fatec-log.vercel.app/"
+        link: "https://fatec-log.vercel.app/"
+      },
+      {
+        title: "Pixel Art Coloring Book",
+        technologies: "Vue.js, JavaScript, Vite, Pinia, Web Workers, CSS, image-q",
+        description: "App that transforms uploaded images into a pixel-art coloring puzzle with canvas grid rendering, zoom/pan controls, color validation, and PNG export.",
+        link: "https://synthriz.github.io/pixel-art-coloring-book/"
+      },
+      {
+        title: "CV Generator",
+        technologies: "React.js, TypeScript, Tailwind CSS",
+        description: "Web app to create and edit resumes with multiple templates, PDF export, and an ATS-friendly structure.",
+        link: "https://cv-generator-nu-ten.vercel.app"
+      },
+      {
+        title: "RPG HTML",
+        technologies: "Next.js, React, TypeScript, CSS, Node.js",
+        description: "Browser-based ASCII idle RPG with auto-combat, procedural loot, offline progression, upgrades, and local save support.",
+        link: "https://rpg-html.vercel.app/"
       },
       {
         title: "Astro Landing Page Generator",
         technologies: "Astro, TinaCMS, TypeScript, Faker.js",
         description: "Creation of 4 reusable templates with dynamic content generated via CMS and faker.js. Capability to generate +1000 unique variations with focus on performance.",
-        link: "astro-generator.surge.sh/"
+        link: "https://astro-generator.surge.sh/"
+      },
+      {
+        title: "Happy Valentine's Day",
+        technologies: "HTML, CSS, JavaScript",
+        description: "Interactive Valentine's Day website where the 'no' button dodges the mouse and 'yes' redirects to a kitten gif.",
+        link: "https://synthriz.github.io/valentines-day/"
       },
       {
         title: "Expert Notes",
         technologies: "React.js, TypeScript, TailwindCSS, Web Speech API, LocalStorage",
         description: "Responsive front-end application for creating and managing notes (text and voice), with automatic transcription via Web Speech API (SpeechRecognition), real-time search and data persistence with LocalStorage.",
-        link: "github.com/synthriz/expert-notes"
-      },
-      {
-        title: "Database - School",
-        technologies: "SQL, DBML",
-        description: "Relational system for managing Students, Teachers, Subjects, Classes and Enrollments. Developed with SQL and visual modeling in DBML, following First Normal Form (1NF) principles.",
-        link: "github.com/synthriz/bd-escola"
-      },
-      {
-        title: "Expert Polls",
-        technologies: "Node.js, PostgreSQL, Prisma ORM, Redis, WebSockets",
-        description: "Web application for creating polls with real-time voting. Uses Node.js on the backend, PostgreSQL with Prisma for data persistence, Redis for vote management and WebSockets for dynamic results updates.",
-        link: "github.com/synthriz/expert-polls"
-      },
-      {
-        title: "Happy Valentine's Day",
-        technologies: "HTML, CSS, JavaScript",
-        description: "Interactive website created for Valentine's Day with fun logic: the 'no' button dodges the mouse, and 'yes' redirects to a kitten gif. Developed with pure HTML, CSS and JavaScript.",
-        link: "github.com/synthriz/valentines-day"
+        link: "https://expert-notes-nu.vercel.app/"
       }
     ]
   }
