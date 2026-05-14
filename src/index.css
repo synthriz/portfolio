@@ -579,12 +579,19 @@ body.dark .bg-bea-white {
     -webkit-box-decoration-break: clone;
   }
 
-  .cv-print-main section,
-  .cv-print-main article,
-  .cv-print-main ul,
-  .cv-print-main li {
+  .cv-print-main article {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .cv-print-main section {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .cv-print-main section h2 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .cv-print-main a[href]::after,
