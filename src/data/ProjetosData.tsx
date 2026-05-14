@@ -42,16 +42,16 @@ export function getProjetos(language: "pt" | "en") {
       githubLink: "https://github.com/synthriz/cv-generator",
       deployLink: "https://cv-generator-nu-ten.vercel.app",
     },
-    {
-      imagem: "static/bdescola.png",
-      nome: language === "pt" ? "Banco de Dados - Escola" : "Database - School",
-      descricao:
-        language === "pt"
-          ? "O projeto Banco de Dados - Escola implementa um sistema relacional para gerenciar Estudantes, Professores, Disciplinas, Turmas e Matrículas. Utiliza SQL para manipulação de dados e DBML para modelagem visual, seguindo a Primeira Forma Normal (1FN)."
-          : "The Database - School project implements a relational system to manage Students, Teachers, Subjects, Classes, and Enrollments. It uses SQL for data manipulation and DBML for visual modeling, following the First Normal Form (1NF).",
-      tecnologias: ["SQL"],
-      githubLink: "https://github.com/synthriz/bd-escola",
-    },
+    // {
+    //   imagem: "static/bdescola.png",
+    //   nome: language === "pt" ? "Banco de Dados - Escola" : "Database - School",
+    //   descricao:
+    //     language === "pt"
+    //       ? "O projeto Banco de Dados - Escola implementa um sistema relacional para gerenciar Estudantes, Professores, Disciplinas, Turmas e Matrículas. Utiliza SQL para manipulação de dados e DBML para modelagem visual, seguindo a Primeira Forma Normal (1FN)."
+    //       : "The Database - School project implements a relational system to manage Students, Teachers, Subjects, Classes, and Enrollments. It uses SQL for data manipulation and DBML for visual modeling, following the First Normal Form (1NF).",
+    //   tecnologias: ["SQL"],
+    //   githubLink: "https://github.com/synthriz/bd-escola",
+    // },
     {
       imagem: "static/valentinesday.png",
       nome: language === "pt" ? "Happy Valentine's Day" : "Happy Valentine's Day",
@@ -74,26 +74,48 @@ export function getProjetos(language: "pt" | "en") {
       githubLink: "https://github.com/synthriz/expert-notes",
       deployLink: "https://expert-notes-nu.vercel.app/",
     },
+    // {
+    //   imagem: "static/spotifyclone.png",
+    //   nome: language === "pt" ? "Spotify Clone" : "Spotify Clone",
+    //   descricao:
+    //     language === "pt"
+    //       ? "Este projeto recria a página inicial do Spotify, usando HTML para a estrutura, CSS para estilização com CSS Grid, Flexbox e media queries, e JavaScript para manipulação do DOM e interatividade. A aplicação inclui uma API local para simular a busca e exibição de informações, mas a funcionalidade de busca não está disponível fora do ambiente de desenvolvimento devido a limitações no deploy."
+    //       : "This project recreates Spotify's homepage using HTML for structure, CSS with Grid, Flexbox and media queries for styling, and JavaScript for DOM manipulation and interactivity. It includes a local API to simulate search and display data, but the search feature is unavailable outside the development environment due to deployment limitations.",
+    //   tecnologias: ["HTML", "CSS", "Javascript"],
+    //   githubLink: "https://github.com/synthriz/spotify-clone",
+    //   deployLink: "https://synthriz.github.io/spotify-clone/",
+    // },
+    // {
+    //   imagem: "static/expertpolls.png",
+    //   nome: language === "pt" ? "Expert Polls" : "Expert Polls",
+    //   descricao:
+    //     language === "pt"
+    //       ? "O projeto Expert Polls permite aos usuários criar enquetes, votar e acompanhar os resultados em tempo real. Utiliza Node.js para o backend, com dados armazenados no PostgreSQL e manipulados pelo Prisma ORM. O Redis é usado para gerenciar os votos de forma eficiente, e os resultados são atualizados em tempo real via WebSockets."
+    //       : "The Expert Polls project allows users to create polls, vote, and track results in real time. It uses Node.js for the backend, with data stored in PostgreSQL and handled via Prisma ORM. Redis manages votes efficiently, and results are updated in real time through WebSockets.",
+    //   tecnologias: ["node.js", "redis", "sql", "prisma"],
+    //   githubLink: "https://github.com/synthriz/expert-polls",
+    // },
     {
-      imagem: "static/spotifyclone.png",
-      nome: language === "pt" ? "Spotify Clone" : "Spotify Clone",
+      imagem: "static/rpg.png",
+      nome: language === "pt" ? "RPG" : "RPG",
       descricao:
         language === "pt"
-          ? "Este projeto recria a página inicial do Spotify, usando HTML para a estrutura, CSS para estilização com CSS Grid, Flexbox e media queries, e JavaScript para manipulação do DOM e interatividade. A aplicação inclui uma API local para simular a busca e exibição de informações, mas a funcionalidade de busca não está disponível fora do ambiente de desenvolvimento devido a limitações no deploy."
-          : "This project recreates Spotify's homepage using HTML for structure, CSS with Grid, Flexbox and media queries for styling, and JavaScript for DOM manipulation and interactivity. It includes a local API to simulate search and display data, but the search feature is unavailable outside the development environment due to deployment limitations.",
-      tecnologias: ["HTML", "CSS", "Javascript"],
-      githubLink: "https://github.com/synthriz/spotify-clone",
-      deployLink: "https://synthriz.github.io/spotify-clone/",
+          ? "RPG HTML é um idle RPG em ASCII para navegador onde o personagem luta automaticamente enquanto você gerencia equipamentos, upgrades e progressão por áreas e chefes.\nCom loot procedural, progresso offline e salvamento local, o jogo entrega uma experiência retrô leve, divertida e viciante."
+          : "RPG HTML is a browser-based ASCII idle RPG where your character fights automatically while you manage gear, upgrades, and progression through areas and bosses.\nWith procedural loot, offline progress, and local save support, it delivers a lightweight, retro, and addictive gameplay experience.",
+      tecnologias: ["Next.js", "React", "TypeScript", "CSS", "Node.js"],
+      githubLink: "https://github.com/synthriz/rpg-html",
+      deployLink: "https://rpg-html.vercel.app/",
     },
     {
-      imagem: "static/expertpolls.png",
-      nome: language === "pt" ? "Expert Polls" : "Expert Polls",
+      imagem: "static/coloringbook.png",
+      nome: language === "pt" ? "Pixel Art Coloring Book " : "Pixel Art Coloring Book ",
       descricao:
         language === "pt"
-          ? "O projeto Expert Polls permite aos usuários criar enquetes, votar e acompanhar os resultados em tempo real. Utiliza Node.js para o backend, com dados armazenados no PostgreSQL e manipulados pelo Prisma ORM. O Redis é usado para gerenciar os votos de forma eficiente, e os resultados são atualizados em tempo real via WebSockets."
-          : "The Expert Polls project allows users to create polls, vote, and track results in real time. It uses Node.js for the backend, with data stored in PostgreSQL and handled via Prisma ORM. Redis manages votes efficiently, and results are updated in real time through WebSockets.",
-      tecnologias: ["node.js", "redis", "sql", "prisma"],
-      githubLink: "https://github.com/synthriz/expert-polls",
+          ? "Aplicação web que transforma imagens JPG/PNG em um puzzle de colorir estilo pixel art, reduzindo a paleta e convertendo tudo para um grid de células no canvas.\nInclui zoom/pan, modo de cores corretas, progresso em tempo real, exportação em PNG e persistência de sessão no localStorage."
+          : "Web app that turns JPG/PNG images into a pixel-art coloring puzzle by reducing the palette and converting everything into a paintable cell grid on canvas.\nIt includes zoom/pan, correct-color mode, real-time progress tracking, PNG export, and session persistence via localStorage.",
+      tecnologias: ["vue.js", "javascript", "vite", "pinia", "web workers", "css", "image-q"],
+      githubLink: "https://github.com/synthriz/pixel-art-coloring-book",
+      deployLink: "https://synthriz.github.io/pixel-art-coloring-book/",
     },
 
   ] satisfies ProjetoDataItem[];
